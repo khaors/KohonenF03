@@ -68,6 +68,49 @@ Some explanation of the parameters is included in the following lines:
 - TOROIDAL GRID: If 1 then the sides of the map are connected in such a way that the 2D projection is done over a grid with donut-like shape. This avoids border effects that can induce artifacts in the clustering of high-dimensional datasets. 
 
 
+### TWO_LEVEL_SOM_TRAIN
+
+The Two Level SOM is an architecture where two SOM are used to cluster the input data. The first level is a conventional SOM where the input data is projected into a 2D grid and the second level is a SOM where the prototypes identified in the first level are projected into a 1D that is defined in terms of the number of clusters that need to be identified. More information about this approach can be obtained [here](https://ieeexplore.ieee.org/document/846731). 
+
+The parameter file of the _two_level_som_train_ program has the following structure:
+
+```
+!
+!
+!
+TWO_LEVEL_SOM_TRAIN_PARAMETERS
+LAYER1
+0                                                 !TRAINING OPTION
+iris.dat                                          !INPUT PATTERNS FILE
+150                                               !NUMBER PATTERNS
+4                                                 !NUMBER INPUT VARIABLES
+1 2 3 4                                           !COLUMNS
+normal_som                                        !SOM_TYPE (normal_som,visom)
+10 10 1                                           !NUMBER_NODES IN SOM (NODES IN X, Y AND Z)
+200                                               !NUMBER EPOCHS
+0.1                                               !LEARNING RATE
+12345                                             !RANDOM SEED
+euclidean                                         !DISTANCE TYPE(euclidean is the only option)
+rectangular                                       !NODE TYPE(rectangular,hexagonal)
+gaussian                                          !NEIGHBORHOOD TYPE(bubble,gaussian)
+0                                                 !DEBUG LEVEL
+som_iris2l.dbg                                    !DEBUG FILE
+som_iris2l                                        !BASE NAME FOR THE OUTPUT FILES
+1                                                 !PRINT RESULTS
+1                                                 !TOROIDAL GRID(0=NO, 1=YES)
+LAYER2
+5 1 1                                             !NUMBER NODES
+100                                               !NUMBER EPOCHS
+0.1                                               !LEARNING RATE
+12346                                             !RANDOM SEED
+euclidean                                         !DISTANCE TYPE
+rectangular                                       !NODE TYPE
+gaussian                                          !NEIGHBORHOOD TYPE
+
+```
+
+The options are a direct extension of the _som_train_ program and these explained in the previous section. 
+
 ## Testing
 
 A simple example is included in the repository in which the goal is to find the clusters present in the _iris_ dataset. This dataset is included in the _iris.dat_ file where the samples have been properly scaled in the range between 0 and 1. The input parameters of the program _som_train_ are specified in a parameter file as explained in the previous section. The clustering of the _iris dataset_ can be done writing on the command line:
