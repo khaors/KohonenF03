@@ -25,7 +25,7 @@
 <div id="content">
 <hr />
 <a name="Kohonen2fkohonen5fpattern5futilities"></a>
-<a name="robo4"></a><h2>Kohonen/kohonen_pattern_utilities [ Modules ]</h2>
+<a name="robo5"></a><h2>Kohonen/kohonen_pattern_utilities [ Modules ]</h2>
 
 <p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="./robo_modules.html#robo_top_of_doc">Modules</a> ]</p>
 <p class="item_name">NAME</p>
@@ -42,9 +42,9 @@
 
 <hr />
 <a name="kohonen5fpattern5futilities2fkohonen5fpattern"></a>
-<a name="robo18"></a><h2>kohonen_pattern_utilities/kohonen_pattern [ Classes ]</h2>
+<a name="robo23"></a><h2>kohonen_pattern_utilities/kohonen_pattern [ Classes ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo4">kohonen_pattern_utilities</a> ] [ <a href="./robo_classes.html#robo_top_of_doc">Classes</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo5">kohonen_pattern_utilities</a> ] [ <a href="./robo_classes.html#robo_top_of_doc">Classes</a> ]</p>
 <p class="item_name">NAME</p>
 <pre>   <strong>kohonen_pattern</strong>
 </pre>
@@ -53,16 +53,16 @@
 </pre>
 <p class="item_name">ATTRIBUTES</p>
 <pre class="source">  private
-    type(<a href="./kohonen_prototype_utilities_f90.html#robo24">kohonen_prototype</a>) :: pattern
+    type(<a href="./kohonen_prototype_utilities_f90.html#robo29">kohonen_prototype</a>) :: pattern
     character(len=50) :: pattern_name 
   contains
 </pre>
 <p class="item_name">METHODS</p>
-<pre class="source">    procedure,public :: <a href="./two_level_self_organized_map_utilities_f90.html#robo61">create</a> =&gt; <a href="#robo20">kohonen_pattern_create</a>
-    procedure,public :: <a href="./self_organized_map_utilities_f90.html#robo36">destroy</a> =&gt; <a href="#robo21">kohonen_pattern_destroy</a>
-    procedure,public :: get =&gt; <a href="#robo19">kohonen_pattern_accessor</a>
-    procedure,public :: set =&gt; <a href="#robo22">kohonen_pattern_mutator</a>
-    procedure,public :: <a href="./self_organized_map_utilities_f90.html#robo46">print</a> =&gt; <a href="#robo23">kohonen_pattern_print</a>
+<pre class="source">    procedure,public :: <a href="./two_level_self_organized_map_utilities_f90.html#robo66">create</a> =&gt; <a href="#robo25">kohonen_pattern_create</a>
+    procedure,public :: <a href="./self_organized_map_utilities_f90.html#robo41">destroy</a> =&gt; <a href="#robo26">kohonen_pattern_destroy</a>
+    procedure,public :: get =&gt; <a href="#robo24">kohonen_pattern_accessor</a>
+    procedure,public :: set =&gt; <a href="#robo27">kohonen_pattern_mutator</a>
+    procedure,public :: <a href="./self_organized_map_utilities_f90.html#robo51">print</a> =&gt; <a href="#robo28">kohonen_pattern_print</a>
     procedure,public :: get_nrow =&gt; kohonen_pattern_nrow
     procedure,public :: get_ncol =&gt; kohonen_pattern_ncol
 !
@@ -71,9 +71,9 @@ end type <strong>kohonen_pattern</strong>
 
 <hr />
 <a name="kohonen5fpattern5futilities2fkohonen5fpattern5faccessor"></a>
-<a name="robo19"></a><h2>kohonen_pattern_utilities/kohonen_pattern_accessor [ Functions ]</h2>
+<a name="robo24"></a><h2>kohonen_pattern_utilities/kohonen_pattern_accessor [ Functions ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo4">kohonen_pattern_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo5">kohonen_pattern_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
 <p class="item_name">NAME</p>
 <pre>   <strong>kohonen_pattern_accessor</strong>
 </pre>
@@ -84,15 +84,15 @@ end type <strong>kohonen_pattern</strong>
 <pre class="source">!========================================================================================
  subroutine <strong>kohonen_pattern_accessor</strong>(current_pattern,pattern_value)
 !========================================================================================
-   class(<a href="#robo18">kohonen_pattern</a>) :: current_pattern
-   type(<a href="./kohonen_prototype_utilities_f90.html#robo24">kohonen_prototype</a>),intent(inout) :: pattern_value
+   class(<a href="#robo23">kohonen_pattern</a>) :: current_pattern
+   type(<a href="./kohonen_prototype_utilities_f90.html#robo29">kohonen_prototype</a>),intent(inout) :: pattern_value
 </pre>
 
 <hr />
 <a name="kohonen5fpattern5futilities2fkohonen5fpattern5fcreate"></a>
-<a name="robo20"></a><h2>kohonen_pattern_utilities/kohonen_pattern_create [ Functions ]</h2>
+<a name="robo25"></a><h2>kohonen_pattern_utilities/kohonen_pattern_create [ Functions ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo4">kohonen_pattern_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo5">kohonen_pattern_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
 <p class="item_name">NAME</p>
 <pre>   <strong>kohonen_pattern_create</strong>
 </pre>
@@ -103,16 +103,16 @@ end type <strong>kohonen_pattern</strong>
 <pre class="source">!========================================================================================
  subroutine <strong>kohonen_pattern_create</strong>(current_pattern,input,name)
 !========================================================================================
-   class(<a href="#robo18">kohonen_pattern</a>) :: current_pattern
+   class(<a href="#robo23">kohonen_pattern</a>) :: current_pattern
    real(kind=8),dimension(:,:),intent(inout) :: input
    character(len=*),optional :: name
 </pre>
 
 <hr />
 <a name="kohonen5fpattern5futilities2fkohonen5fpattern5fdestroy"></a>
-<a name="robo21"></a><h2>kohonen_pattern_utilities/kohonen_pattern_destroy [ Functions ]</h2>
+<a name="robo26"></a><h2>kohonen_pattern_utilities/kohonen_pattern_destroy [ Functions ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo4">kohonen_pattern_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo5">kohonen_pattern_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
 <p class="item_name">NAME</p>
 <pre>   <strong>kohonen_pattern_destroy</strong>
 </pre>
@@ -123,14 +123,14 @@ end type <strong>kohonen_pattern</strong>
 <pre class="source">!========================================================================================
  subroutine <strong>kohonen_pattern_destroy</strong>(current_pattern)
 !========================================================================================
-   class(<a href="#robo18">kohonen_pattern</a>) :: current_pattern
+   class(<a href="#robo23">kohonen_pattern</a>) :: current_pattern
 </pre>
 
 <hr />
 <a name="kohonen5fpattern5futilities2fkohonen5fpattern5fmutator"></a>
-<a name="robo22"></a><h2>kohonen_pattern_utilities/kohonen_pattern_mutator [ Functions ]</h2>
+<a name="robo27"></a><h2>kohonen_pattern_utilities/kohonen_pattern_mutator [ Functions ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo4">kohonen_pattern_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo5">kohonen_pattern_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
 <p class="item_name">NAME</p>
 <pre>   <strong>kohonen_pattern_mutator</strong>
 </pre>
@@ -141,32 +141,32 @@ end type <strong>kohonen_pattern</strong>
 <pre class="source">!========================================================================================
  subroutine <strong>kohonen_pattern_mutator</strong>(current_pattern,pattern_value)
 !========================================================================================
-   class(<a href="#robo18">kohonen_pattern</a>) :: current_pattern
-   type(<a href="./kohonen_prototype_utilities_f90.html#robo24">kohonen_prototype</a>),intent(inout) :: pattern_value
+   class(<a href="#robo23">kohonen_pattern</a>) :: current_pattern
+   type(<a href="./kohonen_prototype_utilities_f90.html#robo29">kohonen_prototype</a>),intent(inout) :: pattern_value
 </pre>
 
 <hr />
 <a name="kohonen5fpattern5futilities2fkohonen5fpattern5fprint"></a>
-<a name="robo23"></a><h2>kohonen_pattern_utilities/kohonen_pattern_print [ Functions ]</h2>
+<a name="robo28"></a><h2>kohonen_pattern_utilities/kohonen_pattern_print [ Functions ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo4">kohonen_pattern_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo5">kohonen_pattern_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
 <p class="item_name">NAME</p>
 <pre>   <strong>kohonen_pattern_print</strong>
 </pre>
 <p class="item_name">PURPOSE</p>
-<pre>   Function to <a href="./self_organized_map_utilities_f90.html#robo46">print</a> a Kohonen pattern 
+<pre>   Function to <a href="./self_organized_map_utilities_f90.html#robo51">print</a> a Kohonen pattern 
 </pre>
 <p class="item_name">SYNOPSIS</p>
 <pre class="source">!========================================================================================
  subroutine <strong>kohonen_pattern_print</strong>(current_pattern,unit_)
 !========================================================================================
-   class(<a href="#robo18">kohonen_pattern</a>) :: current_pattern
+   class(<a href="#robo23">kohonen_pattern</a>) :: current_pattern
    integer,intent(inout),optional :: unit_
 </pre>
 
 </div> <!-- content -->
 <div id="footer">
-<p>Generated from C:/GITProjects/KohonenF03/kohonen_pattern_utilities.f90 with <a href="http://www.xs4all.nl/~rfsber/Robo/robodoc.html">ROBODoc</a> V4.99.43 on Sat Jan 26 2019 23:27:48
+<p>Generated from C:/GITProjects/KohonenF03/kohonen_pattern_utilities.f90 with <a href="http://www.xs4all.nl/~rfsber/Robo/robodoc.html">ROBODoc</a> V4.99.43 on Sun Jan 27 2019 06:58:31
 </p>
 </div> <!-- footer -->
 </body>

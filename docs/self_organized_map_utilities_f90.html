@@ -25,14 +25,14 @@
 <div id="content">
 <hr />
 <a name="Kohonen2fself5forganized5fmap5futilities"></a>
-<a name="robo6"></a><h2>Kohonen/self_organized_map_utilities [ Modules ]</h2>
+<a name="robo7"></a><h2>Kohonen/self_organized_map_utilities [ Modules ]</h2>
 
 <p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="./robo_modules.html#robo_top_of_doc">Modules</a> ]</p>
 <p class="item_name">NAME</p>
 <pre>  MODULE <strong>self_organized_map_utilities</strong>
 </pre>
 <p class="item_name">PURPOSE</p>
-<pre>  This module defines a class for simple <a href="#robo49">self_organized_map</a> (one kohonen layer) 
+<pre>  This module defines a class for simple <a href="#robo54">self_organized_map</a> (one kohonen layer) 
 </pre>
 <p class="item_name">AUTHOR</p>
 <pre> Oscar Garcia-Cabrejo
@@ -42,9 +42,9 @@
 
 <hr />
 <a name="self5forganized5fmap5futilities2fcalculate5fcoordinates"></a>
-<a name="robo30"></a><h2>self_organized_map_utilities/calculate_coordinates [ Functions ]</h2>
+<a name="robo35"></a><h2>self_organized_map_utilities/calculate_coordinates [ Functions ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo6">self_organized_map_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo7">self_organized_map_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
 <p class="item_name">NAME</p>
 <pre>   <strong>calculate_coordinates</strong>
 </pre>
@@ -62,9 +62,9 @@
 
 <hr />
 <a name="self5forganized5fmap5futilities2fcalculate5fdistance5fbetween5fprototypes"></a>
-<a name="robo31"></a><h2>self_organized_map_utilities/calculate_distance_between_prototypes [ Functions ]</h2>
+<a name="robo36"></a><h2>self_organized_map_utilities/calculate_distance_between_prototypes [ Functions ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo6">self_organized_map_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo7">self_organized_map_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
 <p class="item_name">NAME</p>
 <pre>   <strong>calculate_distance_between_prototypes</strong>
 </pre>
@@ -75,14 +75,14 @@
 <pre class="source">!========================================================================================
  subroutine <strong>calculate_distance_between_prototypes</strong>(kohonen_map)
 !========================================================================================
-  class(<a href="#robo49">self_organized_map</a>) :: kohonen_map
+  class(<a href="#robo54">self_organized_map</a>) :: kohonen_map
 </pre>
 
 <hr />
 <a name="self5forganized5fmap5futilities2fcalculate5fdistance5fmatrix"></a>
-<a name="robo32"></a><h2>self_organized_map_utilities/calculate_distance_matrix [ Functions ]</h2>
+<a name="robo37"></a><h2>self_organized_map_utilities/calculate_distance_matrix [ Functions ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo6">self_organized_map_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo7">self_organized_map_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
 <p class="item_name">NAME</p>
 <pre>   <strong>calculate_distance_matrix</strong>
 </pre>
@@ -100,9 +100,9 @@
 
 <hr />
 <a name="self5forganized5fmap5futilities2fcalculate5fsigma"></a>
-<a name="robo33"></a><h2>self_organized_map_utilities/calculate_sigma [ Functions ]</h2>
+<a name="robo38"></a><h2>self_organized_map_utilities/calculate_sigma [ Functions ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo6">self_organized_map_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo7">self_organized_map_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
 <p class="item_name">NAME</p>
 <pre>   <strong>calculate_sigma</strong>
 </pre>
@@ -113,7 +113,7 @@
 <pre class="source">!========================================================================================
  function <strong>calculate_sigma</strong>(kohonen_map,input_data,seed) result(sigma)
 !========================================================================================
-   class(<a href="#robo49">self_organized_map</a>) :: kohonen_map
+   class(<a href="#robo54">self_organized_map</a>) :: kohonen_map
    real(kind=8),dimension(:,:),intent(inout) :: input_data
    integer,intent(inout),optional :: seed
    real(kind=8) :: sigma
@@ -121,9 +121,9 @@
 
 <hr />
 <a name="self5forganized5fmap5futilities2fcalculate5fu5fmatrix"></a>
-<a name="robo34"></a><h2>self_organized_map_utilities/calculate_u_matrix [ Functions ]</h2>
+<a name="robo39"></a><h2>self_organized_map_utilities/calculate_u_matrix [ Functions ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo6">self_organized_map_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo7">self_organized_map_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
 <p class="item_name">NAME</p>
 <pre>   <strong>calculate_u_matrix</strong>
 </pre>
@@ -134,51 +134,51 @@
 <pre class="source">!========================================================================================
  subroutine <strong>calculate_u_matrix</strong>(kohonen_map)
 !========================================================================================
- class(<a href="#robo49">self_organized_map</a>) :: kohonen_map
+ class(<a href="#robo54">self_organized_map</a>) :: kohonen_map
 </pre>
 
 <hr />
 <a name="self5forganized5fmap5futilities2fcreate"></a>
-<a name="robo35"></a><h2>self_organized_map_utilities/create [ Functions ]</h2>
+<a name="robo40"></a><h2>self_organized_map_utilities/create [ Functions ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo6">self_organized_map_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo7">self_organized_map_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
 <p class="item_name">NAME</p>
 <pre>   <strong>create</strong>
 </pre>
 <p class="item_name">PURPOSE</p>
-<pre>   Constructor for <a href="#robo49">self_organized_map</a> 
+<pre>   Constructor for <a href="#robo54">self_organized_map</a> 
 </pre>
 <p class="item_name">SYNOPSIS</p>
 <pre class="source">!========================================================================================
  subroutine create_som(kohonen_map,training_parameters)
 !========================================================================================
-   class(<a href="#robo49">self_organized_map</a>) :: kohonen_map
+   class(<a href="#robo54">self_organized_map</a>) :: kohonen_map
    type(kohonen_layer_parameters),dimension(:) :: training_parameters
 </pre>
 
 <hr />
 <a name="self5forganized5fmap5futilities2fdestroy"></a>
-<a name="robo36"></a><h2>self_organized_map_utilities/destroy [ Functions ]</h2>
+<a name="robo41"></a><h2>self_organized_map_utilities/destroy [ Functions ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo6">self_organized_map_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo7">self_organized_map_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
 <p class="item_name">NAME</p>
 <pre>   <strong>destroy</strong>
 </pre>
 <p class="item_name">PURPOSE</p>
-<pre>   Destructor for <a href="#robo49">self_organized_map</a> 
+<pre>   Destructor for <a href="#robo54">self_organized_map</a> 
 </pre>
 <p class="item_name">SYNOPSIS</p>
 <pre class="source">!========================================================================================
  subroutine destroy_som(kohonen_map)
 !========================================================================================
-   class(<a href="#robo49">self_organized_map</a>) :: kohonen_map
+   class(<a href="#robo54">self_organized_map</a>) :: kohonen_map
 </pre>
 
 <hr />
 <a name="self5forganized5fmap5futilities2fexternal5fpredict5fmap"></a>
-<a name="robo37"></a><h2>self_organized_map_utilities/external_predict_map [ Functions ]</h2>
+<a name="robo42"></a><h2>self_organized_map_utilities/external_predict_map [ Functions ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo6">self_organized_map_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo7">self_organized_map_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
 <p class="item_name">NAME</p>
 <pre>   <strong>external_predict_map</strong>
 </pre>
@@ -198,9 +198,9 @@
 
 <hr />
 <a name="self5forganized5fmap5futilities2fexternal5ftrain5fmap"></a>
-<a name="robo38"></a><h2>self_organized_map_utilities/external_train_map [ Functions ]</h2>
+<a name="robo43"></a><h2>self_organized_map_utilities/external_train_map [ Functions ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo6">self_organized_map_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo7">self_organized_map_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
 <p class="item_name">NAME</p>
 <pre>   <strong>external_train_map</strong>
 </pre>
@@ -227,9 +227,9 @@
 
 <hr />
 <a name="self5forganized5fmap5futilities2ffind5fbest5fmatch5funit"></a>
-<a name="robo39"></a><h2>self_organized_map_utilities/find_best_match_unit [ Functions ]</h2>
+<a name="robo44"></a><h2>self_organized_map_utilities/find_best_match_unit [ Functions ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo6">self_organized_map_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo7">self_organized_map_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
 <p class="item_name">NAME</p>
 <pre>   <strong>find_best_match_unit</strong>
 </pre>
@@ -240,17 +240,17 @@
 <pre class="source">!========================================================================================
  subroutine <strong>find_best_match_unit</strong>(kohonen_map,current_prototype,ihit,jhit,khit,dist_hit)
 !========================================================================================
-   class(<a href="#robo49">self_organized_map</a>) :: kohonen_map
-   type(<a href="./kohonen_prototype_utilities_f90.html#robo24">kohonen_prototype</a>),intent(inout) :: current_prototype
+   class(<a href="#robo54">self_organized_map</a>) :: kohonen_map
+   type(<a href="./kohonen_prototype_utilities_f90.html#robo29">kohonen_prototype</a>),intent(inout) :: current_prototype
    integer,intent(out) :: ihit,jhit,khit
    real(kind=8),intent(out) :: dist_hit
 </pre>
 
 <hr />
 <a name="self5forganized5fmap5futilities2ffind5fbmu5fgrid"></a>
-<a name="robo40"></a><h2>self_organized_map_utilities/find_bmu_grid [ Functions ]</h2>
+<a name="robo45"></a><h2>self_organized_map_utilities/find_bmu_grid [ Functions ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo6">self_organized_map_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo7">self_organized_map_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
 <p class="item_name">NAME</p>
 <pre>   <strong>find_bmu_grid</strong>
 </pre>
@@ -261,34 +261,34 @@
 <pre class="source">!========================================================================================
  subroutine <strong>find_bmu_grid</strong>(kohonen_map,input_data)
 !========================================================================================
- class(<a href="#robo49">self_organized_map</a>) :: kohonen_map
- type(<a href="./kohonen_pattern_utilities_f90.html#robo18">kohonen_pattern</a>),dimension(:),intent(inout) :: input_data
+ class(<a href="#robo54">self_organized_map</a>) :: kohonen_map
+ type(<a href="./kohonen_pattern_utilities_f90.html#robo23">kohonen_pattern</a>),dimension(:),intent(inout) :: input_data
 </pre>
 
 <hr />
 <a name="self5forganized5fmap5futilities2fget5fcount"></a>
-<a name="robo41"></a><h2>self_organized_map_utilities/get_count [ Functions ]</h2>
+<a name="robo46"></a><h2>self_organized_map_utilities/get_count [ Functions ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo6">self_organized_map_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo7">self_organized_map_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
 <p class="item_name">NAME</p>
 <pre>   <strong>get_count</strong>
 </pre>
 <p class="item_name">PURPOSE</p>
-<pre>   Function to get count matrix for <a href="#robo49">self_organized_map</a> 
+<pre>   Function to get count matrix for <a href="#robo54">self_organized_map</a> 
 </pre>
 <p class="item_name">SYNOPSIS</p>
 <pre class="source">!========================================================================================
  subroutine get_count_som(kohonen_map,count_)
 !========================================================================================
-   class(<a href="#robo49">self_organized_map</a>) :: kohonen_map
+   class(<a href="#robo54">self_organized_map</a>) :: kohonen_map
    integer,dimension(:,:,:),intent(inout) :: count_
 </pre>
 
 <hr />
 <a name="self5forganized5fmap5futilities2fget5fprototypes"></a>
-<a name="robo42"></a><h2>self_organized_map_utilities/get_prototypes [ Functions ]</h2>
+<a name="robo47"></a><h2>self_organized_map_utilities/get_prototypes [ Functions ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo6">self_organized_map_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo7">self_organized_map_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
 <p class="item_name">NAME</p>
 <pre>   <strong>get_prototypes</strong>
 </pre>
@@ -299,17 +299,17 @@
 <pre class="source">!========================================================================================
  subroutine <strong>get_prototypes</strong>(kohonen_map,prototypes)
 !========================================================================================
-   class(<a href="#robo49">self_organized_map</a>) :: kohonen_map
+   class(<a href="#robo54">self_organized_map</a>) :: kohonen_map
    real(kind=8),dimension(:,:),intent(out) :: prototypes
 </pre>
 
 <hr />
 <a name="self5forganized5fmap5futilities2findex2position"></a>
-<a name="robo43"></a><h2>self_organized_map_utilities/index2position [ Functions ]</h2>
+<a name="robo48"></a><h2>self_organized_map_utilities/index2position [ Functions ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo6">self_organized_map_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo7">self_organized_map_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
 <p class="item_name">NAME</p>
-<pre>   <a href="#robo44">position2index</a>
+<pre>   <a href="./two_level_self_organized_map_utilities_f90.html#robo71">position2index</a>
 </pre>
 <p class="item_name">PURPOSE</p>
 <pre>    Subroutine to calculate the position ix,iy,iz inside a rectangular grid from index
@@ -324,9 +324,9 @@
 
 <hr />
 <a name="self5forganized5fmap5futilities2fposition2index"></a>
-<a name="robo44"></a><h2>self_organized_map_utilities/position2index [ Functions ]</h2>
+<a name="robo49"></a><h2>self_organized_map_utilities/position2index [ Functions ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo6">self_organized_map_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo7">self_organized_map_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
 <p class="item_name">NAME</p>
 <pre>   <strong>position2index</strong>
 </pre>
@@ -343,48 +343,48 @@
 
 <hr />
 <a name="self5forganized5fmap5futilities2fpredict"></a>
-<a name="robo45"></a><h2>self_organized_map_utilities/predict [ Functions ]</h2>
+<a name="robo50"></a><h2>self_organized_map_utilities/predict [ Functions ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo6">self_organized_map_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo7">self_organized_map_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
 <p class="item_name">NAME</p>
 <pre>   <strong>predict</strong>
 </pre>
 <p class="item_name">PURPOSE</p>
-<pre>   Prediction function for <a href="#robo49">self_organized_map</a> 
+<pre>   Prediction function for <a href="#robo54">self_organized_map</a> 
 </pre>
 <p class="item_name">SYNOPSIS</p>
 <pre class="source">!========================================================================================
  subroutine predict_som(kohonen_map,input_data,map_output)
 !========================================================================================
-   class(<a href="#robo49">self_organized_map</a>) :: kohonen_map
-   type(<a href="./kohonen_pattern_utilities_f90.html#robo18">kohonen_pattern</a>),dimension(:),intent(inout) :: input_data
+   class(<a href="#robo54">self_organized_map</a>) :: kohonen_map
+   type(<a href="./kohonen_pattern_utilities_f90.html#robo23">kohonen_pattern</a>),dimension(:),intent(inout) :: input_data
    integer,dimension(:,:),intent(out) :: map_output
 </pre>
 
 <hr />
 <a name="self5forganized5fmap5futilities2fprint"></a>
-<a name="robo46"></a><h2>self_organized_map_utilities/print [ Functions ]</h2>
+<a name="robo51"></a><h2>self_organized_map_utilities/print [ Functions ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo6">self_organized_map_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo7">self_organized_map_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
 <p class="item_name">NAME</p>
 <pre>   <strong>print</strong>
 </pre>
 <p class="item_name">PURPOSE</p>
-<pre>   Print function for <a href="#robo49">self_organized_map</a> 
+<pre>   Print function for <a href="#robo54">self_organized_map</a> 
 </pre>
 <p class="item_name">SYNOPSIS</p>
 <pre class="source">!========================================================================================
  subroutine print_som(kohonen_map,unit_)
 !========================================================================================
- class(<a href="#robo49">self_organized_map</a>) :: kohonen_map
+ class(<a href="#robo54">self_organized_map</a>) :: kohonen_map
  integer,intent(inout),optional :: unit_
 </pre>
 
 <hr />
 <a name="self5forganized5fmap5futilities2fquery5fsom"></a>
-<a name="robo47"></a><h2>self_organized_map_utilities/query_som [ Functions ]</h2>
+<a name="robo52"></a><h2>self_organized_map_utilities/query_som [ Functions ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo6">self_organized_map_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo7">self_organized_map_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
 <p class="item_name">NAME</p>
 <pre>   <strong>query_som</strong>
 </pre>
@@ -395,35 +395,35 @@
 <pre class="source">!========================================================================================
  subroutine <strong>query_som</strong>(kohonen_map,input_pattern,sample_index) !,output_patterns)
 !========================================================================================
-   class(<a href="#robo49">self_organized_map</a>) :: kohonen_map
+   class(<a href="#robo54">self_organized_map</a>) :: kohonen_map
    real(kind=8),dimension(:,:),intent(inout) :: input_pattern
    integer,allocatable :: sample_index(:)
 </pre>
 
 <hr />
 <a name="self5forganized5fmap5futilities2fread5fsom"></a>
-<a name="robo48"></a><h2>self_organized_map_utilities/read_som [ Functions ]</h2>
+<a name="robo53"></a><h2>self_organized_map_utilities/read_som [ Functions ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo6">self_organized_map_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo7">self_organized_map_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
 <p class="item_name">NAME</p>
 <pre>   <strong>read_som</strong>
 </pre>
 <p class="item_name">PURPOSE</p>
-<pre>    Subroutine to read the prototypes to define a <a href="#robo49">self_organized_map</a> 
+<pre>    Subroutine to read the prototypes to define a <a href="#robo54">self_organized_map</a> 
 </pre>
 <p class="item_name">SYNOPSIS</p>
 <pre class="source">!========================================================================================
  subroutine <strong>read_som</strong>(kohonen_map,som_fl)
 !========================================================================================
-   class(<a href="#robo49">self_organized_map</a>) :: kohonen_map
+   class(<a href="#robo54">self_organized_map</a>) :: kohonen_map
    character(len=*) :: som_fl
 </pre>
 
 <hr />
 <a name="self5forganized5fmap5futilities2fself5forganized5fmap"></a>
-<a name="robo49"></a><h2>self_organized_map_utilities/self_organized_map [ Classes ]</h2>
+<a name="robo54"></a><h2>self_organized_map_utilities/self_organized_map [ Classes ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo6">self_organized_map_utilities</a> ] [ <a href="./robo_classes.html#robo_top_of_doc">Classes</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo7">self_organized_map_utilities</a> ] [ <a href="./robo_classes.html#robo_top_of_doc">Classes</a> ]</p>
 <p class="item_name">NAME</p>
 <pre>   <strong>self_organized_map</strong>
 </pre>
@@ -431,13 +431,13 @@
 <pre>   Class to represent a <strong>self_organized_map</strong>
 </pre>
 <p class="item_name">ATTRIBUTES</p>
-<pre class="source">    type(<a href="./kohonen_prototype_utilities_f90.html#robo24">kohonen_prototype</a>),allocatable :: grid(:,:,:)
+<pre class="source">    type(<a href="./kohonen_prototype_utilities_f90.html#robo29">kohonen_prototype</a>),allocatable :: grid(:,:,:)
     integer,allocatable :: number_patterns(:,:,:),cells_index(:,:)
     real(kind=8),allocatable :: u_matrix(:,:,:),distance(:,:)
     real(kind=8),allocatable :: cells_distances(:,:),coordinates(:,:)
     type(kohonen_layer_parameters) :: parameters
-    type(<a href="./factory_distance_utilities_f90.html#robo12">factory_distance</a>) :: factory
-    class(<a href="./distance_base_utilities_f90.html#robo8">distance_base</a>),allocatable :: distance_function
+    type(<a href="./factory_distance_utilities_f90.html#robo14">factory_distance</a>) :: factory
+    class(<a href="./distance_base_utilities_f90.html#robo10">distance_base</a>),allocatable :: distance_function
     real(kind=8),allocatable :: distortion(:)
 ! 
     integer,allocatable :: grid_pattern_index(:,:,:),list_node_grid(:,:,:,:)
@@ -445,59 +445,59 @@
   contains
 </pre>
 <p class="item_name">METHODS</p>
-<pre class="source">    procedure,public :: <a href="./two_level_self_organized_map_utilities_f90.html#robo61">create</a> =&gt; create_som
-    procedure,public :: <a href="#robo36">destroy</a> =&gt; destroy_som
-    procedure,private :: <a href="#robo50">train_som_data</a>
-    procedure,public :: train =&gt; <a href="#robo50">train_som_data</a> 
-    procedure,public :: <a href="#robo45">predict</a> =&gt; predict_som
-    procedure,public :: <a href="#robo46">print</a> =&gt; print_som
-    procedure,public :: read =&gt; <a href="#robo48">read_som</a>
-    procedure,public :: <a href="#robo41">get_count</a> =&gt; get_count_som
-    procedure,public :: query =&gt; <a href="#robo47">query_som</a>
-    procedure,public :: <a href="#robo42">get_prototypes</a>
+<pre class="source">    procedure,public :: <a href="./two_level_self_organized_map_utilities_f90.html#robo66">create</a> =&gt; create_som
+    procedure,public :: <a href="#robo41">destroy</a> =&gt; destroy_som
+    procedure,private :: <a href="#robo55">train_som_data</a>
+    procedure,public :: train =&gt; <a href="#robo55">train_som_data</a> 
+    procedure,public :: <a href="#robo50">predict</a> =&gt; predict_som
+    procedure,public :: <a href="#robo51">print</a> =&gt; print_som
+    procedure,public :: read =&gt; <a href="#robo53">read_som</a>
+    procedure,public :: <a href="#robo46">get_count</a> =&gt; get_count_som
+    procedure,public :: query =&gt; <a href="#robo52">query_som</a>
+    procedure,public :: <a href="#robo47">get_prototypes</a>
     !procedure,public :: get_index =&gt; get_index_som
     !procedure,public :: get_u_matrix =&gt; get_u_matrix_som
-    procedure,private :: <a href="./two_level_self_organized_map_utilities_f90.html#robo54">find_best_match_unit</a>
-    procedure,private :: <a href="./two_level_self_organized_map_utilities_f90.html#robo76">update_weights</a>
+    procedure,private :: <a href="./two_level_self_organized_map_utilities_f90.html#robo59">find_best_match_unit</a>
+    procedure,private :: <a href="./two_level_self_organized_map_utilities_f90.html#robo81">update_weights</a>
 !    procedure,private :: update_weights1
-    procedure,private :: <a href="#robo40">find_bmu_grid</a>
-    procedure,private :: <a href="#robo34">calculate_u_matrix</a>
-    procedure,private :: <a href="#robo33">calculate_sigma</a>
+    procedure,private :: <a href="#robo45">find_bmu_grid</a>
+    procedure,private :: <a href="#robo39">calculate_u_matrix</a>
+    procedure,private :: <a href="#robo38">calculate_sigma</a>
 !
-    procedure,nopass,private :: <a href="#robo44">position2index</a>
-    procedure,nopass,private :: <a href="./two_level_self_organized_map_utilities_f90.html#robo65">index2position</a>
-    procedure,nopass,private :: <a href="#robo32">calculate_distance_matrix</a>
-    procedure,nopass,private :: <a href="#robo30">calculate_coordinates</a>
-    procedure,private :: <a href="#robo31">calculate_distance_between_prototypes</a>
+    procedure,nopass,private :: <a href="./two_level_self_organized_map_utilities_f90.html#robo71">position2index</a>
+    procedure,nopass,private :: <a href="./two_level_self_organized_map_utilities_f90.html#robo70">index2position</a>
+    procedure,nopass,private :: <a href="#robo37">calculate_distance_matrix</a>
+    procedure,nopass,private :: <a href="./two_level_self_organized_map_utilities_f90.html#robo62">calculate_coordinates</a>
+    procedure,private :: <a href="#robo36">calculate_distance_between_prototypes</a>
 !    
-    procedure,nopass,public :: <a href="#robo38">external_train_map</a>
-    procedure,nopass,public :: <a href="#robo37">external_predict_map</a>
+    procedure,nopass,public :: <a href="#robo43">external_train_map</a>
+    procedure,nopass,public :: <a href="#robo42">external_predict_map</a>
 </pre>
 
 <hr />
 <a name="self5forganized5fmap5futilities2ftrain5fsom5fdata"></a>
-<a name="robo50"></a><h2>self_organized_map_utilities/train_som_data [ Functions ]</h2>
+<a name="robo55"></a><h2>self_organized_map_utilities/train_som_data [ Functions ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo6">self_organized_map_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo7">self_organized_map_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
 <p class="item_name">NAME</p>
 <pre>   <strong>train_som_data</strong>
 </pre>
 <p class="item_name">PURPOSE</p>
-<pre>   Training function for <a href="#robo49">self_organized_map</a> 
+<pre>   Training function for <a href="#robo54">self_organized_map</a> 
 </pre>
 <p class="item_name">SYNOPSIS</p>
 <pre class="source">!========================================================================================
  subroutine <strong>train_som_data</strong>(kohonen_map,input_data)
 !========================================================================================
-   class(<a href="#robo49">self_organized_map</a>) :: kohonen_map
-   type(<a href="./kohonen_pattern_utilities_f90.html#robo18">kohonen_pattern</a>),dimension(:),intent(inout) :: input_data
+   class(<a href="#robo54">self_organized_map</a>) :: kohonen_map
+   type(<a href="./kohonen_pattern_utilities_f90.html#robo23">kohonen_pattern</a>),dimension(:),intent(inout) :: input_data
 </pre>
 
 <hr />
 <a name="self5forganized5fmap5futilities2fupdate5fweights"></a>
-<a name="robo51"></a><h2>self_organized_map_utilities/update_weights [ Functions ]</h2>
+<a name="robo56"></a><h2>self_organized_map_utilities/update_weights [ Functions ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo6">self_organized_map_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo7">self_organized_map_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
 <p class="item_name">NAME</p>
 <pre>   <strong>update_weights</strong>
 </pre>
@@ -509,7 +509,7 @@
  subroutine <strong>update_weights</strong>(kohonen_map,current_values,ihit,jhit,khit,&amp;
             maximum_radius,iteration) 
 !========================================================================================
-  class(<a href="#robo49">self_organized_map</a>) :: kohonen_map
+  class(<a href="#robo54">self_organized_map</a>) :: kohonen_map
   real(kind=8),dimension(:,:),intent(inout) :: current_values
   integer,intent(inout) :: ihit,jhit,khit,iteration
   real(kind=8),intent(inout) :: maximum_radius
@@ -517,7 +517,7 @@
 
 </div> <!-- content -->
 <div id="footer">
-<p>Generated from C:/GITProjects/KohonenF03/self_organized_map_utilities.f90 with <a href="http://www.xs4all.nl/~rfsber/Robo/robodoc.html">ROBODoc</a> V4.99.43 on Sat Jan 26 2019 23:27:48
+<p>Generated from C:/GITProjects/KohonenF03/self_organized_map_utilities.f90 with <a href="http://www.xs4all.nl/~rfsber/Robo/robodoc.html">ROBODoc</a> V4.99.43 on Sun Jan 27 2019 06:58:31
 </p>
 </div> <!-- footer -->
 </body>

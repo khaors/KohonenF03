@@ -42,7 +42,7 @@
 
 <hr />
 <a name="distance5fbase5futilities2fdistance5fbase"></a>
-<a name="robo8"></a><h2>distance_base_utilities/distance_base [ Classes ]</h2>
+<a name="robo10"></a><h2>distance_base_utilities/distance_base [ Classes ]</h2>
 
 <p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo0">distance_base_utilities</a> ] [ <a href="./robo_classes.html#robo_top_of_doc">Classes</a> ]</p>
 <p class="item_name">NAME</p>
@@ -52,13 +52,13 @@
 <pre>   Abstract Class to represent an abstract function to calculate distance
 </pre>
 <p class="item_name">METHODS</p>
-<pre class="source">    procedure(<a href="#robo9">distance_function1</a>),deferred :: calculate
+<pre class="source">    procedure(<a href="#robo11">distance_function1</a>),deferred :: calculate
 end type <strong>distance_base</strong>
 </pre>
 
 <hr />
 <a name="distance5fbase5futilities2fdistance5ffunction1"></a>
-<a name="robo9"></a><h2>distance_base_utilities/distance_function1 [ Functions ]</h2>
+<a name="robo11"></a><h2>distance_base_utilities/distance_function1 [ Functions ]</h2>
 
 <p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo0">distance_base_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
 <p class="item_name">NAME</p>
@@ -71,15 +71,15 @@ end type <strong>distance_base</strong>
 <pre class="source">!========================================================================================
   function <strong>distance_function1</strong>(distance,vector1,vector2) result(d)
 !========================================================================================
-    import :: <a href="#robo8">distance_base</a>
-    class(<a href="#robo8">distance_base</a>) :: distance
+    import :: <a href="#robo10">distance_base</a>
+    class(<a href="#robo10">distance_base</a>) :: distance
     real(kind=8),dimension(:,:),intent(inout) :: vector1,vector2
     real(kind=8) :: d
 </pre>
 
 </div> <!-- content -->
 <div id="footer">
-<p>Generated from C:/GITProjects/KohonenF03/distance_base_utilities.f90 with <a href="http://www.xs4all.nl/~rfsber/Robo/robodoc.html">ROBODoc</a> V4.99.43 on Sat Jan 26 2019 23:27:48
+<p>Generated from C:/GITProjects/KohonenF03/distance_base_utilities.f90 with <a href="http://www.xs4all.nl/~rfsber/Robo/robodoc.html">ROBODoc</a> V4.99.43 on Sun Jan 27 2019 06:58:31
 </p>
 </div> <!-- footer -->
 </body>

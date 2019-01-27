@@ -25,11 +25,11 @@
 <div id="content">
 <hr />
 <a name="Kohonen2fkohonen5fprototype5futilities"></a>
-<a name="robo5"></a><h2>Kohonen/kohonen_prototype_utilities [ Modules ]</h2>
+<a name="robo6"></a><h2>Kohonen/kohonen_prototype_utilities [ Modules ]</h2>
 
 <p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="./robo_modules.html#robo_top_of_doc">Modules</a> ]</p>
 <p class="item_name">NAME</p>
-<pre>  MODULE <a href="./kohonen_pattern_utilities_f90.html#robo4">kohonen_pattern_utilities</a>
+<pre>  MODULE <a href="./kohonen_pattern_utilities_f90.html#robo5">kohonen_pattern_utilities</a>
 </pre>
 <p class="item_name">PURPOSE</p>
 <pre>  This module defines a class for kohonen prototype (units inside kohonen layers) 
@@ -42,9 +42,9 @@
 
 <hr />
 <a name="kohonen5fprototype5futilities2fkohonen5fprototype"></a>
-<a name="robo24"></a><h2>kohonen_prototype_utilities/kohonen_prototype [ Classes ]</h2>
+<a name="robo29"></a><h2>kohonen_prototype_utilities/kohonen_prototype [ Classes ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo5">kohonen_prototype_utilities</a> ] [ <a href="./robo_classes.html#robo_top_of_doc">Classes</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo6">kohonen_prototype_utilities</a> ] [ <a href="./robo_classes.html#robo_top_of_doc">Classes</a> ]</p>
 <p class="item_name">NAME</p>
 <pre>   <strong>kohonen_prototype</strong>
 </pre>
@@ -54,11 +54,11 @@
 <p class="item_name">METHODS</p>
 <pre class="source">  contains
 !
-       procedure :: <a href="./two_level_self_organized_map_utilities_f90.html#robo61">create</a> =&gt; <a href="#robo26">kohonen_prototype_constructor</a>
-       procedure :: <a href="./self_organized_map_utilities_f90.html#robo36">destroy</a> =&gt; <a href="#robo27">kohonen_prototype_destructor</a>
-       procedure :: get_prototype =&gt; <a href="#robo25">kohonen_prototype_accessor</a>
-       procedure :: set_prototype =&gt; <a href="#robo28">kohonen_prototype_mutator</a>
-       procedure :: <a href="./self_organized_map_utilities_f90.html#robo46">print</a> =&gt; <a href="#robo29">kohonen_prototype_print</a>
+       procedure :: <a href="./two_level_self_organized_map_utilities_f90.html#robo66">create</a> =&gt; <a href="#robo31">kohonen_prototype_constructor</a>
+       procedure :: <a href="./self_organized_map_utilities_f90.html#robo41">destroy</a> =&gt; <a href="#robo32">kohonen_prototype_destructor</a>
+       procedure :: get_prototype =&gt; <a href="#robo30">kohonen_prototype_accessor</a>
+       procedure :: set_prototype =&gt; <a href="#robo33">kohonen_prototype_mutator</a>
+       procedure :: <a href="./self_organized_map_utilities_f90.html#robo51">print</a> =&gt; <a href="#robo34">kohonen_prototype_print</a>
        procedure :: distance =&gt; kohonen_prototype_distance
        procedure :: get_nrow =&gt; kohonen_prototype_nrow
        procedure :: get_ncol =&gt; kohonen_prototype_ncol
@@ -68,9 +68,9 @@ end type <strong>kohonen_prototype</strong>
 
 <hr />
 <a name="kohonen5fprototype5futilities2fkohonen5fprototype5faccessor"></a>
-<a name="robo25"></a><h2>kohonen_prototype_utilities/kohonen_prototype_accessor [ Functions ]</h2>
+<a name="robo30"></a><h2>kohonen_prototype_utilities/kohonen_prototype_accessor [ Functions ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo5">kohonen_prototype_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo6">kohonen_prototype_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
 <p class="item_name">NAME</p>
 <pre>    <strong>kohonen_prototype_accessor</strong>
 </pre>
@@ -81,15 +81,15 @@ end type <strong>kohonen_prototype</strong>
 <pre class="source">!========================================================================================
  subroutine <strong>kohonen_prototype_accessor</strong>(prototype,d)
 !========================================================================================
-   class(<a href="#robo24">kohonen_prototype</a>) :: prototype
+   class(<a href="#robo29">kohonen_prototype</a>) :: prototype
    real(kind=8),dimension(prototype%number_rows,prototype%number_columns) :: d
 </pre>
 
 <hr />
 <a name="kohonen5fprototype5futilities2fkohonen5fprototype5fconstructor"></a>
-<a name="robo26"></a><h2>kohonen_prototype_utilities/kohonen_prototype_constructor [ Functions ]</h2>
+<a name="robo31"></a><h2>kohonen_prototype_utilities/kohonen_prototype_constructor [ Functions ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo5">kohonen_prototype_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo6">kohonen_prototype_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
 <p class="item_name">NAME</p>
 <pre>    <strong>kohonen_prototype_constructor</strong>
 </pre>
@@ -100,15 +100,15 @@ end type <strong>kohonen_prototype</strong>
 <pre class="source">!========================================================================================
  subroutine <strong>kohonen_prototype_constructor</strong>(prototype,input_data)
 !========================================================================================
-   class(<a href="#robo24">kohonen_prototype</a>) :: prototype
+   class(<a href="#robo29">kohonen_prototype</a>) :: prototype
    real(kind=8),dimension(:,:) :: input_data
 </pre>
 
 <hr />
 <a name="kohonen5fprototype5futilities2fkohonen5fprototype5fdestructor"></a>
-<a name="robo27"></a><h2>kohonen_prototype_utilities/kohonen_prototype_destructor [ Functions ]</h2>
+<a name="robo32"></a><h2>kohonen_prototype_utilities/kohonen_prototype_destructor [ Functions ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo5">kohonen_prototype_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo6">kohonen_prototype_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
 <p class="item_name">NAME</p>
 <pre>    <strong>kohonen_prototype_destructor</strong>
 </pre>
@@ -119,14 +119,14 @@ end type <strong>kohonen_prototype</strong>
 <pre class="source">!========================================================================================
  subroutine <strong>kohonen_prototype_destructor</strong>(prototype)
 !========================================================================================
-   class(<a href="#robo24">kohonen_prototype</a>),intent(inout) :: prototype
+   class(<a href="#robo29">kohonen_prototype</a>),intent(inout) :: prototype
 </pre>
 
 <hr />
 <a name="kohonen5fprototype5futilities2fkohonen5fprototype5fmutator"></a>
-<a name="robo28"></a><h2>kohonen_prototype_utilities/kohonen_prototype_mutator [ Functions ]</h2>
+<a name="robo33"></a><h2>kohonen_prototype_utilities/kohonen_prototype_mutator [ Functions ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo5">kohonen_prototype_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo6">kohonen_prototype_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
 <p class="item_name">NAME</p>
 <pre>    <strong>kohonen_prototype_mutator</strong>
 </pre>
@@ -137,32 +137,32 @@ end type <strong>kohonen_prototype</strong>
 <pre class="source">!========================================================================================
  subroutine <strong>kohonen_prototype_mutator</strong>(prototype,new_data)
 !========================================================================================
-   class(<a href="#robo24">kohonen_prototype</a>) :: prototype
+   class(<a href="#robo29">kohonen_prototype</a>) :: prototype
    real(kind=8),dimension(:,:),intent(inout) :: new_data
 </pre>
 
 <hr />
 <a name="kohonen5fprototype5futilities2fkohonen5fprototype5fprint"></a>
-<a name="robo29"></a><h2>kohonen_prototype_utilities/kohonen_prototype_print [ Functions ]</h2>
+<a name="robo34"></a><h2>kohonen_prototype_utilities/kohonen_prototype_print [ Functions ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo5">kohonen_prototype_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo6">kohonen_prototype_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
 <p class="item_name">NAME</p>
 <pre>    <strong>kohonen_prototype_print</strong>
 </pre>
 <p class="item_name">PURPOSE</p>
-<pre>    Function to <a href="./self_organized_map_utilities_f90.html#robo46">print</a> a kohonen prototype
+<pre>    Function to <a href="./self_organized_map_utilities_f90.html#robo51">print</a> a kohonen prototype
 </pre>
 <p class="item_name">SYNOPSIS</p>
 <pre class="source">!========================================================================================
  subroutine <strong>kohonen_prototype_print</strong>(prototype,unit_)
 !========================================================================================
- class(<a href="#robo24">kohonen_prototype</a>) :: prototype
+ class(<a href="#robo29">kohonen_prototype</a>) :: prototype
  integer,intent(inout),optional :: unit_
 </pre>
 
 </div> <!-- content -->
 <div id="footer">
-<p>Generated from C:/GITProjects/KohonenF03/kohonen_prototype_utilities.f90 with <a href="http://www.xs4all.nl/~rfsber/Robo/robodoc.html">ROBODoc</a> V4.99.43 on Sat Jan 26 2019 23:27:48
+<p>Generated from C:/GITProjects/KohonenF03/kohonen_prototype_utilities.f90 with <a href="http://www.xs4all.nl/~rfsber/Robo/robodoc.html">ROBODoc</a> V4.99.43 on Sun Jan 27 2019 06:58:31
 </p>
 </div> <!-- footer -->
 </body>

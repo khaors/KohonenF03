@@ -25,7 +25,7 @@
 <div id="content">
 <hr />
 <a name="Kohonen2fkohonen5fmap5fbase5futilities"></a>
-<a name="robo3"></a><h2>Kohonen/kohonen_map_base_utilities [ Modules ]</h2>
+<a name="robo4"></a><h2>Kohonen/kohonen_map_base_utilities [ Modules ]</h2>
 
 <p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="./robo_modules.html#robo_top_of_doc">Modules</a> ]</p>
 <p class="item_name">NAME</p>
@@ -42,9 +42,9 @@
 
 <hr />
 <a name="kohonen5fmap5fbase5futilities2fkohonen5fmap5fbase"></a>
-<a name="robo13"></a><h2>kohonen_map_base_utilities/kohonen_map_base [ Classes ]</h2>
+<a name="robo18"></a><h2>kohonen_map_base_utilities/kohonen_map_base [ Classes ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo3">kohonen_map_base_utilities</a> ] [ <a href="./robo_classes.html#robo_top_of_doc">Classes</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo4">kohonen_map_base_utilities</a> ] [ <a href="./robo_classes.html#robo_top_of_doc">Classes</a> ]</p>
 <p class="item_name">NAME</p>
 <pre>   <strong>kohonen_map_base</strong>
 </pre>
@@ -52,18 +52,18 @@
 <pre>   Abstract Class to represent a template for a kohonen map
 </pre>
 <p class="item_name">METHODS</p>
-<pre class="source">    procedure(<a href="#robo14">kohonen_map_constructor</a>),public,deferred :: <a href="./two_level_self_organized_map_utilities_f90.html#robo61">create</a>
-    procedure(<a href="#robo15">kohonen_map_destructor</a>),public,deferred :: <a href="./self_organized_map_utilities_f90.html#robo36">destroy</a>
-    procedure(<a href="#robo16">kohonen_map_function1</a>),public,deferred :: train 
-    procedure(<a href="#robo17">kohonen_map_function2</a>),public,deferred :: <a href="./self_organized_map_utilities_f90.html#robo45">predict</a>
+<pre class="source">    procedure(<a href="#robo19">kohonen_map_constructor</a>),public,deferred :: <a href="./two_level_self_organized_map_utilities_f90.html#robo66">create</a>
+    procedure(<a href="#robo20">kohonen_map_destructor</a>),public,deferred :: <a href="./self_organized_map_utilities_f90.html#robo41">destroy</a>
+    procedure(<a href="#robo21">kohonen_map_function1</a>),public,deferred :: train 
+    procedure(<a href="#robo22">kohonen_map_function2</a>),public,deferred :: <a href="./self_organized_map_utilities_f90.html#robo50">predict</a>
 end type <strong>kohonen_map_base</strong>
 </pre>
 
 <hr />
 <a name="kohonen5fmap5fbase5futilities2fkohonen5fmap5fconstructor"></a>
-<a name="robo14"></a><h2>kohonen_map_base_utilities/kohonen_map_constructor [ Functions ]</h2>
+<a name="robo19"></a><h2>kohonen_map_base_utilities/kohonen_map_constructor [ Functions ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo3">kohonen_map_base_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo4">kohonen_map_base_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
 <p class="item_name">NAME</p>
 <pre>   <strong>kohonen_map_constructor</strong>
 </pre>
@@ -74,17 +74,17 @@ end type <strong>kohonen_map_base</strong>
 <pre class="source">!========================================================================================
   subroutine <strong>kohonen_map_constructor</strong>(kohonen_map,training_parameters)
 !========================================================================================
-    import :: <a href="#robo13">kohonen_map_base</a>
+    import :: <a href="#robo18">kohonen_map_base</a>
     import :: kohonen_layer_parameters
-    class(<a href="#robo13">kohonen_map_base</a>) :: kohonen_map
+    class(<a href="#robo18">kohonen_map_base</a>) :: kohonen_map
     type(kohonen_layer_parameters),dimension(:) :: training_parameters
 </pre>
 
 <hr />
 <a name="kohonen5fmap5fbase5futilities2fkohonen5fmap5fdestructor"></a>
-<a name="robo15"></a><h2>kohonen_map_base_utilities/kohonen_map_destructor [ Functions ]</h2>
+<a name="robo20"></a><h2>kohonen_map_base_utilities/kohonen_map_destructor [ Functions ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo3">kohonen_map_base_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo4">kohonen_map_base_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
 <p class="item_name">NAME</p>
 <pre>   <strong>kohonen_map_destructor</strong>
 </pre>
@@ -95,15 +95,15 @@ end type <strong>kohonen_map_base</strong>
 <pre class="source">!========================================================================================
   subroutine <strong>kohonen_map_destructor</strong>(kohonen_map)
 !========================================================================================
-    import :: <a href="#robo13">kohonen_map_base</a>
-    class(<a href="#robo13">kohonen_map_base</a>) :: kohonen_map
+    import :: <a href="#robo18">kohonen_map_base</a>
+    class(<a href="#robo18">kohonen_map_base</a>) :: kohonen_map
 </pre>
 
 <hr />
 <a name="kohonen5fmap5fbase5futilities2fkohonen5fmap5ffunction1"></a>
-<a name="robo16"></a><h2>kohonen_map_base_utilities/kohonen_map_function1 [ Functions ]</h2>
+<a name="robo21"></a><h2>kohonen_map_base_utilities/kohonen_map_function1 [ Functions ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo3">kohonen_map_base_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo4">kohonen_map_base_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
 <p class="item_name">NAME</p>
 <pre>   <strong>kohonen_map_function1</strong>
 </pre>
@@ -114,18 +114,18 @@ end type <strong>kohonen_map_base</strong>
 <pre class="source">!========================================================================================
   subroutine <strong>kohonen_map_function1</strong>(kohonen_map,input_data)
 !========================================================================================
-    import :: <a href="#robo13">kohonen_map_base</a>
-    import :: <a href="./kohonen_pattern_utilities_f90.html#robo18">kohonen_pattern</a>
-    class(<a href="#robo13">kohonen_map_base</a>) :: kohonen_map
-    type(<a href="./kohonen_pattern_utilities_f90.html#robo18">kohonen_pattern</a>),dimension(:),intent(inout) :: input_data
+    import :: <a href="#robo18">kohonen_map_base</a>
+    import :: <a href="./kohonen_pattern_utilities_f90.html#robo23">kohonen_pattern</a>
+    class(<a href="#robo18">kohonen_map_base</a>) :: kohonen_map
+    type(<a href="./kohonen_pattern_utilities_f90.html#robo23">kohonen_pattern</a>),dimension(:),intent(inout) :: input_data
 !    real(kind=8),dimension(:,:),intent(inout),optional :: distances
 </pre>
 
 <hr />
 <a name="kohonen5fmap5fbase5futilities2fkohonen5fmap5ffunction2"></a>
-<a name="robo17"></a><h2>kohonen_map_base_utilities/kohonen_map_function2 [ Functions ]</h2>
+<a name="robo22"></a><h2>kohonen_map_base_utilities/kohonen_map_function2 [ Functions ]</h2>
 
-<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo3">kohonen_map_base_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
+<p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo4">kohonen_map_base_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
 <p class="item_name">NAME</p>
 <pre>   <strong>kohonen_map_function2</strong>
 </pre>
@@ -136,16 +136,16 @@ end type <strong>kohonen_map_base</strong>
 <pre class="source">!========================================================================================
   subroutine <strong>kohonen_map_function2</strong>(kohonen_map,input_data,map_output)
 !========================================================================================
-    import :: <a href="#robo13">kohonen_map_base</a>
-    import :: <a href="./kohonen_pattern_utilities_f90.html#robo18">kohonen_pattern</a>
-    class(<a href="#robo13">kohonen_map_base</a>) :: kohonen_map
-    type(<a href="./kohonen_pattern_utilities_f90.html#robo18">kohonen_pattern</a>),dimension(:),intent(inout) :: input_data
+    import :: <a href="#robo18">kohonen_map_base</a>
+    import :: <a href="./kohonen_pattern_utilities_f90.html#robo23">kohonen_pattern</a>
+    class(<a href="#robo18">kohonen_map_base</a>) :: kohonen_map
+    type(<a href="./kohonen_pattern_utilities_f90.html#robo23">kohonen_pattern</a>),dimension(:),intent(inout) :: input_data
     integer,dimension(:,:),intent(out) :: map_output
 </pre>
 
 </div> <!-- content -->
 <div id="footer">
-<p>Generated from C:/GITProjects/KohonenF03/kohonen_map_base_utilities.f90 with <a href="http://www.xs4all.nl/~rfsber/Robo/robodoc.html">ROBODoc</a> V4.99.43 on Sat Jan 26 2019 23:27:48
+<p>Generated from C:/GITProjects/KohonenF03/kohonen_map_base_utilities.f90 with <a href="http://www.xs4all.nl/~rfsber/Robo/robodoc.html">ROBODoc</a> V4.99.43 on Sun Jan 27 2019 06:58:31
 </p>
 </div> <!-- footer -->
 </body>
