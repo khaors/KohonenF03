@@ -133,7 +133,7 @@ two_level_som_train two_level_som_train.par
 
 The documentation of the library can be accessed in the following links:
 
-- [html files](http://htmlpreview.github.com/?https://github.com/khaors/KohonenF03/blob/master/kohonen_html/masterindex.html)
+- [html files](https://khaors.github.io/KohonenF03/index.html)
 
 
 ## Licensing, Authors, Acknowledgements
