@@ -112,7 +112,7 @@ clean:
 ####                                     Documentation
 ###################################################################################################
 .PHONY: kohonen_doc
-kohonen_doc:
+KohonenF03_doc:
 	$(RD) --src C:\\GITProjects\\KohonenF03 --doc $@ --singledoc --latex --sections --rc robodoc.rc --altlatex  
 	$(PDF) $@.tex
 #
