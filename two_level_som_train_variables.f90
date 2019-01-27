@@ -53,8 +53,8 @@ implicit none;
    write(*,*) 'Pattern file= ',trim(som_parameters(1)%pattern_file)
    read(ipar,*) som_parameters(1)%number_patterns;
    write(*,*) 'Number patterns= ',som_parameters(1)%number_patterns;
-   read(ipar,*) som_parameters(1)%number_variables1,&
-                som_parameters(1)%number_variables2;
+   read(ipar,*) som_parameters(1)%number_variables1!,&
+   som_parameters(1)%number_variables2=1;
    number_variables=som_parameters(1)%number_variables1*&
                     som_parameters(1)%number_variables2;
    som_parameters(1)%number_variables=number_variables;                 
