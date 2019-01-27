@@ -1,0 +1,30 @@
+# robodoc.rc file
+items:
+    NAME
+    SYNOPSIS
+    PURPOSE
+    AUTHOR 
+    CREATION DATE
+    SUMMARY
+    MODIFICATION HISTORY
+    INPUTS
+    OUTPUTS
+    ATTRIBUTES
+    METHODS
+    SEE ALSO
+    BUGS
+    DERIVED FROM 
+    DERIVED by
+    USES
+    SOURCE
+source items:
+    SYNOPSIS
+    ATTRIBUTES
+    METHODS
+    USES
+    SOURCE
+
+remark begin markers:
+    !*
+remark end markers:
+    *!

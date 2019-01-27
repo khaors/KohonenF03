@@ -114,5 +114,5 @@ clean:
 ###################################################################################################
 .PHONY: kohonen_doc
 kohonen_doc:
-	$(RD) --src /home/oscar/Oscar/MyProjects/Kohonen/ --doc $@ --singledoc --latex --sections --rc robodoc.rc --altlatex  
+	$(RD) --src C:\\GITProjects\\KohonenF03 --doc $@ --singledoc --latex --sections --rc robodoc.rc --altlatex  
 	$(PDF) $@.tex
