@@ -123,7 +123,7 @@ som_train som_train.par
 
 The documentation of the library can be accessed in the following links:
 
-- [html files](https://github.com/khaors/KohonenF03/blob/master/kohonen_html/masterindex.html)
+- [html files](http://htmlpreview.github.com/?https://github.com/khaors/KohonenF03/blob/master/kohonen_html/masterindex.html)
 
 
 ## Licensing, Authors, Acknowledgements
