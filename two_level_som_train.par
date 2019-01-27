@@ -1,0 +1,31 @@
+!
+!
+!
+TWO_LEVEL_SOM_TRAIN_PARAMETERS
+LAYER1
+0                                                 !TRAINING OPTION
+iris.dat                                          !INPUT PATTERNS FILE
+150                                               !NUMBER PATTERNS
+4                                                 !NUMBER INPUT VARIABLES
+1 2 3 4                                           !COLUMNS
+normal_som                                        !SOM_TYPE (normal_som,visom)
+10 10 1                                           !NUMBER_NODES IN SOM (NODES IN X, Y AND Z)
+200                                               !NUMBER EPOCHS
+0.1                                               !LEARNING RATE
+12345                                             !RANDOM SEED
+euclidean                                         !DISTANCE TYPE(euclidean is the only option)
+rectangular                                       !NODE TYPE(rectangular,hexagonal)
+gaussian                                          !NEIGHBORHOOD TYPE(bubble,gaussian)
+0                                                 !DEBUG LEVEL
+som_iris.dbg                                      !DEBUG FILE
+som_iris                                          !BASE NAME FOR THE OUTPUT FILES
+1                                                 !PRINT RESULTS
+1                                                 !TOROIDAL GRID(0=NO, 1=YES)
+LAYER2
+5 1 1                                             !NUMBER NODES
+100                                               !NUMBER EPOCHS
+0.1                                               !LEARNING RATE
+12346                                             !RANDOM SEED
+euclidean                                         !DISTANCE TYPE
+rectangular                                       !NODE TYPE
+gaussian                                          !NEIGHBORHOOD TYPE
