@@ -1,0 +1,2072 @@
+% Document: ./KohonenF03_doc
+% Source: C:/GITProjects/KohonenF03/
+% Generated with ROBODoc Version 4.99.43 (Jan 26 2019)
+\documentclass{article}
+\usepackage{makeidx}
+\usepackage{graphicx}
+\oddsidemargin 0 cm
+\evensidemargin 0 cm
+\topmargin 0 cm
+\textwidth 16 cm
+\textheight 22 cm
+\setlength{\parindent}{0in}
+\setlength{\parskip}{.08in}
+
+\pagestyle{headings}
+\title{API Reference}
+\author{Generated with ROBODoc Version 4.99.43 (Jan 26 2019)
+}
+\makeindex
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents
+
+\newpage
+\section{Kohonen/distance\_base\_utilities}
+\textsl{[ Modules ]}
+
+\label{ch:robo0}
+\label{ch:Kohonen_distance_base_utilities}
+\index{unsorted!distance\_base\_utilities}\index{Modules!distance\_base\_utilities}
+\textbf{NAME}
+\begin{verbatim}
+  MODULE distance_base_utilities
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+  This module defines an abstract class for distance 
+\end{verbatim}
+\textbf{AUTHOR}
+\begin{verbatim}
+ Oscar Garcia-Cabrejo
+ NOTES 
+\end{verbatim}
+\textbf{MODIFICATION HISTORY}
+\newpage
+\subsection{distance\_base\_utilities/distance\_base}
+\textsl{[ distance\_base\_utilities ]}
+\textsl{[ Classes ]}
+
+\label{ch:robo10}
+\label{ch:distance_base_utilities_distance_base}
+\index{unsorted!distance\_base}\index{Classes!distance\_base}
+\textbf{NAME}
+\begin{verbatim}
+   distance_base
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+   Abstract Class to represent an abstract function to calculate distance
+\end{verbatim}
+\textbf{METHODS}
+\begin{verbatim}
+    procedure(distance_function1),deferred :: calculate
+end type distance_base
+\end{verbatim}
+\newpage
+\subsection{distance\_base\_utilities/distance\_function1}
+\textsl{[ distance\_base\_utilities ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo11}
+\label{ch:distance_base_utilities_distance_function1}
+\index{unsorted!distance\_function1}\index{Functions!distance\_function1}
+\textbf{NAME}
+\begin{verbatim}
+   distance_function1
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+   Template for Function to calculate distance 
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!========================================================================================
+  function distance_function1(distance,vector1,vector2) result(d)
+!========================================================================================
+    import :: distance_base
+    class(distance_base) :: distance
+    real(kind=8),dimension(:,:),intent(inout) :: vector1,vector2
+    real(kind=8) :: d
+\end{verbatim}
+\newpage
+\section{Kohonen/euclidean\_distance\_utilities}
+\textsl{[ Modules ]}
+
+\label{ch:robo1}
+\label{ch:Kohonen_euclidean_distance_utilities}
+\index{unsorted!euclidean\_distance\_utilities}\index{Modules!euclidean\_distance\_utilities}
+\textbf{NAME}
+\begin{verbatim}
+  MODULE euclidean_distance_utilities
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+  This module defines a class to calculate the Euclidean distance between kohonen prototypes 
+\end{verbatim}
+\textbf{AUTHOR}
+\begin{verbatim}
+ Oscar Garcia-Cabrejo
+ NOTES 
+\end{verbatim}
+\textbf{MODIFICATION HISTORY}
+\newpage
+\subsection{euclidean\_distance\_utilities/calculate\_euclidean\_distance}
+\textsl{[ euclidean\_distance\_utilities ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo12}
+\label{ch:euclidean_distance_utilities_calculate_euclidean_distance}
+\index{unsorted!calculate\_euclidean\_distance}\index{Functions!calculate\_euclidean\_distance}
+\textbf{NAME}
+\begin{verbatim}
+   calculate_euclidean_distance
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+   Function to calculate euclidean distance between vectors 
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!========================================================================================
+ function calculate_euclidean_distance(distance,vector1,vector2) result(d)
+!========================================================================================
+   class(euclidean_distance) :: distance
+   real(kind=8),dimension(:,:),intent(inout) :: vector1,vector2
+   real(kind=8) :: d
+\end{verbatim}
+\newpage
+\subsection{euclidean\_distance\_utilities/euclidean\_distance}
+\textsl{[ euclidean\_distance\_utilities ]}
+\textsl{[ Classes ]}
+
+\label{ch:robo13}
+\label{ch:euclidean_distance_utilities_euclidean_distance}
+\index{unsorted!euclidean\_distance}\index{Classes!euclidean\_distance}
+\textbf{NAME}
+\begin{verbatim}
+   euclidean_distance
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+   Class to calculate the euclidean distance 
+\end{verbatim}
+\textbf{METHODS}
+\begin{verbatim}
+   procedure,public :: calculate => calculate_euclidean_distance
+\end{verbatim}
+\newpage
+\section{Kohonen/factory\_distance\_utilities}
+\textsl{[ Modules ]}
+
+\label{ch:robo2}
+\label{ch:Kohonen_factory_distance_utilities}
+\index{unsorted!factory\_distance\_utilities}\index{Modules!factory\_distance\_utilities}
+\textbf{NAME}
+\begin{verbatim}
+  MODULE factory_distance_utilities
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+  This module defines a factory to create distance objects 
+\end{verbatim}
+\textbf{AUTHOR}
+\begin{verbatim}
+ Oscar Garcia-Cabrejo
+ NOTES 
+\end{verbatim}
+\textbf{MODIFICATION HISTORY}
+\newpage
+\subsection{factory\_distance\_utilities/factory\_distance}
+\textsl{[ factory\_distance\_utilities ]}
+\textsl{[ Classes ]}
+
+\label{ch:robo14}
+\label{ch:factory_distance_utilities_factory_distance}
+\index{unsorted!factory\_distance}\index{Classes!factory\_distance}
+\textbf{NAME}
+\begin{verbatim}
+   factory_distance
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+  Class to represent a distance factory 
+\end{verbatim}
+\textbf{METHODS}
+\begin{verbatim}
+  contains
+    procedure,public :: create_distance
+end type factory_distance
+\end{verbatim}
+\newpage
+\section{Kohonen/influence\_function\_utilities}
+\textsl{[ Modules ]}
+
+\label{ch:robo3}
+\label{ch:Kohonen_influence_function_utilities}
+\index{unsorted!influence\_function\_utilities}\index{Modules!influence\_function\_utilities}
+\textbf{NAME}
+\begin{verbatim}
+  MODULE influence_function_utilities
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+  This module defines a class to calculate the influence functions required in Robust SOM 
+\end{verbatim}
+\textbf{AUTHOR}
+\begin{verbatim}
+ Oscar Garcia-Cabrejo
+
+\end{verbatim}
+\newpage
+\subsection{influence\_function\_utilities/calculate\_influence\_function}
+\textsl{[ influence\_function\_utilities ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo15}
+\label{ch:influence_function_utilities_calculate_influence_function}
+\index{unsorted!calculate\_influence\_function}\index{Functions!calculate\_influence\_function}
+\textbf{NAME}
+\begin{verbatim}
+   calculate_influence_function
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+   Calculates the influence function
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!========================================================================================
+  function calculate_influence_function(my_function,type_,r) result(v)
+!========================================================================================
+  class(influence_function) :: my_function
+  character(len=*) :: type_ 
+  real(kind=8),intent(inout) :: r 
+  real(kind=8) :: v
+\end{verbatim}
+\newpage
+\subsection{influence\_function\_utilities/influence\_function}
+\textsl{[ influence\_function\_utilities ]}
+\textsl{[ Classes ]}
+
+\label{ch:robo16}
+\label{ch:influence_function_utilities_influence_function}
+\index{unsorted!influence\_function}\index{Classes!influence\_function}
+\textbf{NAME}
+\begin{verbatim}
+   influence_function
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+   Class that represents an influence function
+\end{verbatim}
+\textbf{METHODS}
+\begin{verbatim}
+  contains
+    procedure,public :: calculate => calculate_influence_function
+\end{verbatim}
+\newpage
+\subsection{influence\_function\_utilities/sgn}
+\textsl{[ influence\_function\_utilities ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo17}
+\label{ch:influence_function_utilities_sgn}
+\index{unsorted!sgn}\index{Functions!sgn}
+\textbf{NAME}
+\begin{verbatim}
+   sgn
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+   Sign function
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!========================================================================================
+  function sgn(x) result(v)
+!======================================================================================== 
+  real(kind=8),intent(inout) :: x
+  real(kind=8) :: v
+\end{verbatim}
+\newpage
+\section{Kohonen/kohonen\_map\_base\_utilities}
+\textsl{[ Modules ]}
+
+\label{ch:robo4}
+\label{ch:Kohonen_kohonen_map_base_utilities}
+\index{unsorted!kohonen\_map\_base\_utilities}\index{Modules!kohonen\_map\_base\_utilities}
+\textbf{NAME}
+\begin{verbatim}
+  MODULE kohonen_map_base_utilities
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+  This module defines an abstract class for kohonen maps 
+\end{verbatim}
+\textbf{AUTHOR}
+\begin{verbatim}
+ Oscar Garcia-Cabrejo
+ NOTES 
+\end{verbatim}
+\textbf{MODIFICATION HISTORY}
+\newpage
+\subsection{kohonen\_map\_base\_utilities/kohonen\_map\_base}
+\textsl{[ kohonen\_map\_base\_utilities ]}
+\textsl{[ Classes ]}
+
+\label{ch:robo18}
+\label{ch:kohonen_map_base_utilities_kohonen_map_base}
+\index{unsorted!kohonen\_map\_base}\index{Classes!kohonen\_map\_base}
+\textbf{NAME}
+\begin{verbatim}
+   kohonen_map_base
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+   Abstract Class to represent a template for a kohonen map
+\end{verbatim}
+\textbf{METHODS}
+\begin{verbatim}
+    procedure(kohonen_map_constructor),public,deferred :: create
+    procedure(kohonen_map_destructor),public,deferred :: destroy
+    procedure(kohonen_map_function1),public,deferred :: train 
+    procedure(kohonen_map_function2),public,deferred :: predict
+end type kohonen_map_base
+\end{verbatim}
+\newpage
+\subsection{kohonen\_map\_base\_utilities/kohonen\_map\_constructor}
+\textsl{[ kohonen\_map\_base\_utilities ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo19}
+\label{ch:kohonen_map_base_utilities_kohonen_map_constructor}
+\index{unsorted!kohonen\_map\_constructor}\index{Functions!kohonen\_map\_constructor}
+\textbf{NAME}
+\begin{verbatim}
+   kohonen_map_constructor
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+   Template function for the constructor of a kohonen map
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!========================================================================================
+  subroutine kohonen_map_constructor(kohonen_map,training_parameters)
+!========================================================================================
+    import :: kohonen_map_base
+    import :: kohonen_layer_parameters
+    class(kohonen_map_base) :: kohonen_map
+    type(kohonen_layer_parameters),dimension(:) :: training_parameters
+\end{verbatim}
+\newpage
+\subsection{kohonen\_map\_base\_utilities/kohonen\_map\_destructor}
+\textsl{[ kohonen\_map\_base\_utilities ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo20}
+\label{ch:kohonen_map_base_utilities_kohonen_map_destructor}
+\index{unsorted!kohonen\_map\_destructor}\index{Functions!kohonen\_map\_destructor}
+\textbf{NAME}
+\begin{verbatim}
+   kohonen_map_destructor
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+   Template function for the destructor of a kohonen map
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!========================================================================================
+  subroutine kohonen_map_destructor(kohonen_map)
+!========================================================================================
+    import :: kohonen_map_base
+    class(kohonen_map_base) :: kohonen_map
+\end{verbatim}
+\newpage
+\subsection{kohonen\_map\_base\_utilities/kohonen\_map\_function1}
+\textsl{[ kohonen\_map\_base\_utilities ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo21}
+\label{ch:kohonen_map_base_utilities_kohonen_map_function1}
+\index{unsorted!kohonen\_map\_function1}\index{Functions!kohonen\_map\_function1}
+\textbf{NAME}
+\begin{verbatim}
+   kohonen_map_function1
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+   Template function for the training function of a kohonen map
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!========================================================================================
+  subroutine kohonen_map_function1(kohonen_map,input_data)
+!========================================================================================
+    import :: kohonen_map_base
+    import :: kohonen_pattern
+    class(kohonen_map_base) :: kohonen_map
+    type(kohonen_pattern),dimension(:),intent(inout) :: input_data
+!    real(kind=8),dimension(:,:),intent(inout),optional :: distances
+\end{verbatim}
+\newpage
+\subsection{kohonen\_map\_base\_utilities/kohonen\_map\_function2}
+\textsl{[ kohonen\_map\_base\_utilities ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo22}
+\label{ch:kohonen_map_base_utilities_kohonen_map_function2}
+\index{unsorted!kohonen\_map\_function2}\index{Functions!kohonen\_map\_function2}
+\textbf{NAME}
+\begin{verbatim}
+   kohonen_map_function2
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+   Template function for the prediction function of a kohonen map
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!========================================================================================
+  subroutine kohonen_map_function2(kohonen_map,input_data,map_output)
+!========================================================================================
+    import :: kohonen_map_base
+    import :: kohonen_pattern
+    class(kohonen_map_base) :: kohonen_map
+    type(kohonen_pattern),dimension(:),intent(inout) :: input_data
+    integer,dimension(:,:),intent(out) :: map_output
+\end{verbatim}
+\newpage
+\section{Kohonen/kohonen\_pattern\_utilities}
+\textsl{[ Modules ]}
+
+\label{ch:robo5}
+\label{ch:Kohonen_kohonen_pattern_utilities}
+\index{unsorted!kohonen\_pattern\_utilities}\index{Modules!kohonen\_pattern\_utilities}
+\textbf{NAME}
+\begin{verbatim}
+  MODULE kohonen_pattern_utilities
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+  This module defines a class for kohonen patterns (input data) 
+\end{verbatim}
+\textbf{AUTHOR}
+\begin{verbatim}
+ Oscar Garcia-Cabrejo
+ NOTES 
+\end{verbatim}
+\textbf{MODIFICATION HISTORY}
+\newpage
+\subsection{kohonen\_pattern\_utilities/kohonen\_pattern}
+\textsl{[ kohonen\_pattern\_utilities ]}
+\textsl{[ Classes ]}
+
+\label{ch:robo23}
+\label{ch:kohonen_pattern_utilities_kohonen_pattern}
+\index{unsorted!kohonen\_pattern}\index{Classes!kohonen\_pattern}
+\textbf{NAME}
+\begin{verbatim}
+   kohonen_pattern
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+   Class to represent a container for input data to  a kohonen map
+\end{verbatim}
+\textbf{ATTRIBUTES}
+\begin{verbatim}
+  private
+    type(kohonen_prototype) :: pattern
+    character(len=50) :: pattern_name 
+  contains
+\end{verbatim}
+\textbf{METHODS}
+\begin{verbatim}
+    procedure,public :: create => kohonen_pattern_create
+    procedure,public :: destroy => kohonen_pattern_destroy
+    procedure,public :: get => kohonen_pattern_accessor
+    procedure,public :: set => kohonen_pattern_mutator
+    procedure,public :: print => kohonen_pattern_print
+    procedure,public :: get_nrow => kohonen_pattern_nrow
+    procedure,public :: get_ncol => kohonen_pattern_ncol
+!
+end type kohonen_pattern
+\end{verbatim}
+\newpage
+\subsection{kohonen\_pattern\_utilities/kohonen\_pattern\_accessor}
+\textsl{[ kohonen\_pattern\_utilities ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo24}
+\label{ch:kohonen_pattern_utilities_kohonen_pattern_accessor}
+\index{unsorted!kohonen\_pattern\_accessor}\index{Functions!kohonen\_pattern\_accessor}
+\textbf{NAME}
+\begin{verbatim}
+   kohonen_pattern_accessor
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+   Kohonen pattern accessor
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!========================================================================================
+ subroutine kohonen_pattern_accessor(current_pattern,pattern_value)
+!========================================================================================
+   class(kohonen_pattern) :: current_pattern
+   type(kohonen_prototype),intent(inout) :: pattern_value
+\end{verbatim}
+\newpage
+\subsection{kohonen\_pattern\_utilities/kohonen\_pattern\_create}
+\textsl{[ kohonen\_pattern\_utilities ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo25}
+\label{ch:kohonen_pattern_utilities_kohonen_pattern_create}
+\index{unsorted!kohonen\_pattern\_create}\index{Functions!kohonen\_pattern\_create}
+\textbf{NAME}
+\begin{verbatim}
+   kohonen_pattern_create
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+   Kohonen pattern constructor
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!========================================================================================
+ subroutine kohonen_pattern_create(current_pattern,input,name)
+!========================================================================================
+   class(kohonen_pattern) :: current_pattern
+   real(kind=8),dimension(:,:),intent(inout) :: input
+   character(len=*),optional :: name
+\end{verbatim}
+\newpage
+\subsection{kohonen\_pattern\_utilities/kohonen\_pattern\_destroy}
+\textsl{[ kohonen\_pattern\_utilities ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo26}
+\label{ch:kohonen_pattern_utilities_kohonen_pattern_destroy}
+\index{unsorted!kohonen\_pattern\_destroy}\index{Functions!kohonen\_pattern\_destroy}
+\textbf{NAME}
+\begin{verbatim}
+   kohonen_pattern_destroy
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+   Kohonen pattern destructor
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!========================================================================================
+ subroutine kohonen_pattern_destroy(current_pattern)
+!========================================================================================
+   class(kohonen_pattern) :: current_pattern
+\end{verbatim}
+\newpage
+\subsection{kohonen\_pattern\_utilities/kohonen\_pattern\_mutator}
+\textsl{[ kohonen\_pattern\_utilities ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo27}
+\label{ch:kohonen_pattern_utilities_kohonen_pattern_mutator}
+\index{unsorted!kohonen\_pattern\_mutator}\index{Functions!kohonen\_pattern\_mutator}
+\textbf{NAME}
+\begin{verbatim}
+   kohonen_pattern_mutator
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+   Kohonen pattern mutator
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!========================================================================================
+ subroutine kohonen_pattern_mutator(current_pattern,pattern_value)
+!========================================================================================
+   class(kohonen_pattern) :: current_pattern
+   type(kohonen_prototype),intent(inout) :: pattern_value
+\end{verbatim}
+\newpage
+\subsection{kohonen\_pattern\_utilities/kohonen\_pattern\_print}
+\textsl{[ kohonen\_pattern\_utilities ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo28}
+\label{ch:kohonen_pattern_utilities_kohonen_pattern_print}
+\index{unsorted!kohonen\_pattern\_print}\index{Functions!kohonen\_pattern\_print}
+\textbf{NAME}
+\begin{verbatim}
+   kohonen_pattern_print
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+   Function to print a Kohonen pattern 
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!========================================================================================
+ subroutine kohonen_pattern_print(current_pattern,unit_)
+!========================================================================================
+   class(kohonen_pattern) :: current_pattern
+   integer,intent(inout),optional :: unit_
+\end{verbatim}
+\newpage
+\section{Kohonen/kohonen\_prototype\_utilities}
+\textsl{[ Modules ]}
+
+\label{ch:robo6}
+\label{ch:Kohonen_kohonen_prototype_utilities}
+\index{unsorted!kohonen\_prototype\_utilities}\index{Modules!kohonen\_prototype\_utilities}
+\textbf{NAME}
+\begin{verbatim}
+  MODULE kohonen_pattern_utilities
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+  This module defines a class for kohonen prototype (units inside kohonen layers) 
+\end{verbatim}
+\textbf{AUTHOR}
+\begin{verbatim}
+ Oscar Garcia-Cabrejo
+ NOTES 
+\end{verbatim}
+\textbf{MODIFICATION HISTORY}
+\newpage
+\subsection{kohonen\_prototype\_utilities/kohonen\_prototype}
+\textsl{[ kohonen\_prototype\_utilities ]}
+\textsl{[ Classes ]}
+
+\label{ch:robo29}
+\label{ch:kohonen_prototype_utilities_kohonen_prototype}
+\index{unsorted!kohonen\_prototype}\index{Classes!kohonen\_prototype}
+\textbf{NAME}
+\begin{verbatim}
+   kohonen_prototype
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+   Class to store a prototype inside a Kohonen map
+\end{verbatim}
+\textbf{METHODS}
+\begin{verbatim}
+  contains
+!
+       procedure :: create => kohonen_prototype_constructor
+       procedure :: destroy => kohonen_prototype_destructor
+       procedure :: get_prototype => kohonen_prototype_accessor
+       procedure :: set_prototype => kohonen_prototype_mutator
+       procedure :: print => kohonen_prototype_print
+       procedure :: distance => kohonen_prototype_distance
+       procedure :: get_nrow => kohonen_prototype_nrow
+       procedure :: get_ncol => kohonen_prototype_ncol
+!
+end type kohonen_prototype
+\end{verbatim}
+\newpage
+\subsection{kohonen\_prototype\_utilities/kohonen\_prototype\_accessor}
+\textsl{[ kohonen\_prototype\_utilities ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo30}
+\label{ch:kohonen_prototype_utilities_kohonen_prototype_accessor}
+\index{unsorted!kohonen\_prototype\_accessor}\index{Functions!kohonen\_prototype\_accessor}
+\textbf{NAME}
+\begin{verbatim}
+    kohonen_prototype_accessor
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+    Acccessor
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!========================================================================================
+ subroutine kohonen_prototype_accessor(prototype,d)
+!========================================================================================
+   class(kohonen_prototype) :: prototype
+   real(kind=8),dimension(prototype%number_rows,prototype%number_columns) :: d
+\end{verbatim}
+\newpage
+\subsection{kohonen\_prototype\_utilities/kohonen\_prototype\_constructor}
+\textsl{[ kohonen\_prototype\_utilities ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo31}
+\label{ch:kohonen_prototype_utilities_kohonen_prototype_constructor}
+\index{unsorted!kohonen\_prototype\_constructor}\index{Functions!kohonen\_prototype\_constructor}
+\textbf{NAME}
+\begin{verbatim}
+    kohonen_prototype_constructor
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+    Constructor
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!========================================================================================
+ subroutine kohonen_prototype_constructor(prototype,input_data)
+!========================================================================================
+   class(kohonen_prototype) :: prototype
+   real(kind=8),dimension(:,:) :: input_data
+\end{verbatim}
+\newpage
+\subsection{kohonen\_prototype\_utilities/kohonen\_prototype\_destructor}
+\textsl{[ kohonen\_prototype\_utilities ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo32}
+\label{ch:kohonen_prototype_utilities_kohonen_prototype_destructor}
+\index{unsorted!kohonen\_prototype\_destructor}\index{Functions!kohonen\_prototype\_destructor}
+\textbf{NAME}
+\begin{verbatim}
+    kohonen_prototype_destructor
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+    Destructor
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!========================================================================================
+ subroutine kohonen_prototype_destructor(prototype)
+!========================================================================================
+   class(kohonen_prototype),intent(inout) :: prototype
+\end{verbatim}
+\newpage
+\subsection{kohonen\_prototype\_utilities/kohonen\_prototype\_mutator}
+\textsl{[ kohonen\_prototype\_utilities ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo33}
+\label{ch:kohonen_prototype_utilities_kohonen_prototype_mutator}
+\index{unsorted!kohonen\_prototype\_mutator}\index{Functions!kohonen\_prototype\_mutator}
+\textbf{NAME}
+\begin{verbatim}
+    kohonen_prototype_mutator
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+    Mutator
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!========================================================================================
+ subroutine kohonen_prototype_mutator(prototype,new_data)
+!========================================================================================
+   class(kohonen_prototype) :: prototype
+   real(kind=8),dimension(:,:),intent(inout) :: new_data
+\end{verbatim}
+\newpage
+\subsection{kohonen\_prototype\_utilities/kohonen\_prototype\_print}
+\textsl{[ kohonen\_prototype\_utilities ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo34}
+\label{ch:kohonen_prototype_utilities_kohonen_prototype_print}
+\index{unsorted!kohonen\_prototype\_print}\index{Functions!kohonen\_prototype\_print}
+\textbf{NAME}
+\begin{verbatim}
+    kohonen_prototype_print
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+    Function to print a kohonen prototype
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!========================================================================================
+ subroutine kohonen_prototype_print(prototype,unit_)
+!========================================================================================
+ class(kohonen_prototype) :: prototype
+ integer,intent(inout),optional :: unit_
+\end{verbatim}
+\newpage
+\section{Kohonen/self\_organized\_map\_utilities}
+\textsl{[ Modules ]}
+
+\label{ch:robo7}
+\label{ch:Kohonen_self_organized_map_utilities}
+\index{unsorted!self\_organized\_map\_utilities}\index{Modules!self\_organized\_map\_utilities}
+\textbf{NAME}
+\begin{verbatim}
+  MODULE self_organized_map_utilities
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+  This module defines a class for simple self_organized_map (one kohonen layer) 
+\end{verbatim}
+\textbf{AUTHOR}
+\begin{verbatim}
+ Oscar Garcia-Cabrejo
+ NOTES 
+\end{verbatim}
+\textbf{MODIFICATION HISTORY}
+\newpage
+\subsection{self\_organized\_map\_utilities/calculate\_coordinates}
+\textsl{[ self\_organized\_map\_utilities ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo35}
+\label{ch:self_organized_map_utilities_calculate_coordinates}
+\index{unsorted!calculate\_coordinates}\index{Functions!calculate\_coordinates}
+\textbf{NAME}
+\begin{verbatim}
+   calculate_coordinates
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+    Subroutine to calculate the coordinates of the units inside a kohonen layer 
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!========================================================================================
+  subroutine calculate_coordinates(current_index,ix,iy,iz,nx,ny,nz,coordinates,node_type)
+!========================================================================================
+  integer,intent(inout) :: current_index,ix,iy,iz,nx,ny,nz
+  real(kind=8),dimension(:,:),intent(out) :: coordinates
+  character(len=*),intent(in) :: node_type
+\end{verbatim}
+\newpage
+\subsection{self\_organized\_map\_utilities/calculate\_distance\_between\_prototypes}
+\textsl{[ self\_organized\_map\_utilities ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo36}
+\label{ch:self_organized_map_utilities_calculate_distance_between_prototypes}
+\index{unsorted!calculate\_distance\_between\_prototypes}\index{Functions!calculate\_distance\_between\_prototypes}
+\textbf{NAME}
+\begin{verbatim}
+   calculate_distance_between_prototypes
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+    Subroutine to calculate the distance between the prototypes
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!========================================================================================
+ subroutine calculate_distance_between_prototypes(kohonen_map)
+!========================================================================================
+  class(self_organized_map) :: kohonen_map
+\end{verbatim}
+\newpage
+\subsection{self\_organized\_map\_utilities/calculate\_distance\_matrix}
+\textsl{[ self\_organized\_map\_utilities ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo37}
+\label{ch:self_organized_map_utilities_calculate_distance_matrix}
+\index{unsorted!calculate\_distance\_matrix}\index{Functions!calculate\_distance\_matrix}
+\textbf{NAME}
+\begin{verbatim}
+   calculate_distance_matrix
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+    Subroutine to calculate the distance between the units inside a kohonen layer 
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!========================================================================================
+  subroutine calculate_distance_matrix(coordinates,distance_matrix,grid_type,toroidal)
+!========================================================================================
+  real(kind=8),dimension(:,:),intent(inout) :: coordinates,distance_matrix
+  character(len=*) :: grid_type
+  logical :: toroidal
+\end{verbatim}
+\newpage
+\subsection{self\_organized\_map\_utilities/calculate\_sigma}
+\textsl{[ self\_organized\_map\_utilities ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo38}
+\label{ch:self_organized_map_utilities_calculate_sigma}
+\index{unsorted!calculate\_sigma}\index{Functions!calculate\_sigma}
+\textbf{NAME}
+\begin{verbatim}
+   calculate_sigma
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+    Function to calculate the scaling factor sigma
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!========================================================================================
+ function calculate_sigma(kohonen_map,input_data,seed) result(sigma)
+!========================================================================================
+   class(self_organized_map) :: kohonen_map
+   real(kind=8),dimension(:,:),intent(inout) :: input_data
+   integer,intent(inout),optional :: seed
+   real(kind=8) :: sigma
+\end{verbatim}
+\newpage
+\subsection{self\_organized\_map\_utilities/calculate\_u\_matrix}
+\textsl{[ self\_organized\_map\_utilities ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo39}
+\label{ch:self_organized_map_utilities_calculate_u_matrix}
+\index{unsorted!calculate\_u\_matrix}\index{Functions!calculate\_u\_matrix}
+\textbf{NAME}
+\begin{verbatim}
+   calculate_u_matrix
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+    Subroutine to calculate  the u_matrix
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!========================================================================================
+ subroutine calculate_u_matrix(kohonen_map)
+!========================================================================================
+ class(self_organized_map) :: kohonen_map
+\end{verbatim}
+\newpage
+\subsection{self\_organized\_map\_utilities/create}
+\textsl{[ self\_organized\_map\_utilities ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo40}
+\label{ch:self_organized_map_utilities_create}
+\index{unsorted!create}\index{Functions!create}
+\textbf{NAME}
+\begin{verbatim}
+   create
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+   Constructor for self_organized_map 
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!========================================================================================
+ subroutine create_som(kohonen_map,training_parameters)
+!========================================================================================
+   class(self_organized_map) :: kohonen_map
+   type(kohonen_layer_parameters),dimension(:) :: training_parameters
+\end{verbatim}
+\newpage
+\subsection{self\_organized\_map\_utilities/destroy}
+\textsl{[ self\_organized\_map\_utilities ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo41}
+\label{ch:self_organized_map_utilities_destroy}
+\index{unsorted!destroy}\index{Functions!destroy}
+\textbf{NAME}
+\begin{verbatim}
+   destroy
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+   Destructor for self_organized_map 
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!========================================================================================
+ subroutine destroy_som(kohonen_map)
+!========================================================================================
+   class(self_organized_map) :: kohonen_map
+\end{verbatim}
+\newpage
+\subsection{self\_organized\_map\_utilities/external\_predict\_map}
+\textsl{[ self\_organized\_map\_utilities ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo42}
+\label{ch:self_organized_map_utilities_external_predict_map}
+\index{unsorted!external\_predict\_map}\index{Functions!external\_predict\_map}
+\textbf{NAME}
+\begin{verbatim}
+   external_predict_map
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+    Subroutine to connect this module to R
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!========================================================================================
+ subroutine external_predict_map(prot,nx,ny,new_pat,npat,nvar,node_index) & 
+ bind(C, name="predict_som_")
+!========================================================================================
+ use, intrinsic :: iso_c_binding, only : c_double, c_int
+ integer(c_int),intent(in) :: nx,ny,npat,nvar
+ real(c_double),intent(in) :: prot(nx*ny,nvar),new_pat(npat,nvar)
+ integer(c_int),intent(out) :: node_index(npat,3) 
+\end{verbatim}
+\newpage
+\subsection{self\_organized\_map\_utilities/external\_train\_map}
+\textsl{[ self\_organized\_map\_utilities ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo43}
+\label{ch:self_organized_map_utilities_external_train_map}
+\index{unsorted!external\_train\_map}\index{Functions!external\_train\_map}
+\textbf{NAME}
+\begin{verbatim}
+   external_train_map
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+    Subroutine to connect the self_organizing_map module to R o C
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!========================================================================================
+ subroutine external_train_map(x,nvar,npat,nx,ny,nepoch,alpha,grid_type,&
+            distance_type,neigh_type,toroidal,prot,distortion,&
+            u_matrix,coords,number_patterns,node_index) bind(C, name="train_som_")
+!========================================================================================
+ use, intrinsic :: iso_c_binding, only : c_double, c_int, c_char
+ real(kind=8),parameter :: version=0.1d0
+ character(len=*),parameter :: program_name="som_train"
+ integer(c_int), intent(in) :: nvar,npat,nx,ny,nepoch,toroidal
+ real(c_double),intent(out) :: prot(nx*ny,nvar),distortion(nepoch)
+ real(c_double),intent(out) :: u_matrix(2*nx-1,2*ny-1),coords(nx*ny,3)
+ integer(c_int),intent(out) :: number_patterns(nx,ny),node_index(npat,3)
+ real(c_double),intent(in) :: x(npat,nvar)
+ real(c_double),intent(in) :: alpha
+ integer(c_int),intent(in) :: grid_type,distance_type,neigh_type
+\end{verbatim}
+\newpage
+\subsection{self\_organized\_map\_utilities/find\_best\_match\_unit}
+\textsl{[ self\_organized\_map\_utilities ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo44}
+\label{ch:self_organized_map_utilities_find_best_match_unit}
+\index{unsorted!find\_best\_match\_unit}\index{Functions!find\_best\_match\_unit}
+\textbf{NAME}
+\begin{verbatim}
+   find_best_match_unit
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+    Subroutine to calculate the best match unit  
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!========================================================================================
+ subroutine find_best_match_unit(kohonen_map,current_prototype,ihit,jhit,khit,dist_hit)
+!========================================================================================
+   class(self_organized_map) :: kohonen_map
+   type(kohonen_prototype),intent(inout) :: current_prototype
+   integer,intent(out) :: ihit,jhit,khit
+   real(kind=8),intent(out) :: dist_hit
+\end{verbatim}
+\newpage
+\subsection{self\_organized\_map\_utilities/find\_bmu\_grid}
+\textsl{[ self\_organized\_map\_utilities ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo45}
+\label{ch:self_organized_map_utilities_find_bmu_grid}
+\index{unsorted!find\_bmu\_grid}\index{Functions!find\_bmu\_grid}
+\textbf{NAME}
+\begin{verbatim}
+   find_bmu_grid
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+    Subroutine to calculate the best match unit over the grid  
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!========================================================================================
+ subroutine find_bmu_grid(kohonen_map,input_data)
+!========================================================================================
+ class(self_organized_map) :: kohonen_map
+ type(kohonen_pattern),dimension(:),intent(inout) :: input_data
+\end{verbatim}
+\newpage
+\subsection{self\_organized\_map\_utilities/get\_count}
+\textsl{[ self\_organized\_map\_utilities ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo46}
+\label{ch:self_organized_map_utilities_get_count}
+\index{unsorted!get\_count}\index{Functions!get\_count}
+\textbf{NAME}
+\begin{verbatim}
+   get_count
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+   Function to get count matrix for self_organized_map 
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!========================================================================================
+ subroutine get_count_som(kohonen_map,count_)
+!========================================================================================
+   class(self_organized_map) :: kohonen_map
+   integer,dimension(:,:,:),intent(inout) :: count_
+\end{verbatim}
+\newpage
+\subsection{self\_organized\_map\_utilities/get\_prototypes}
+\textsl{[ self\_organized\_map\_utilities ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo47}
+\label{ch:self_organized_map_utilities_get_prototypes}
+\index{unsorted!get\_prototypes}\index{Functions!get\_prototypes}
+\textbf{NAME}
+\begin{verbatim}
+   get_prototypes
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+    Subroutine to get SOM prototypes
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!========================================================================================
+ subroutine get_prototypes(kohonen_map,prototypes)
+!========================================================================================
+   class(self_organized_map) :: kohonen_map
+   real(kind=8),dimension(:,:),intent(out) :: prototypes
+\end{verbatim}
+\newpage
+\subsection{self\_organized\_map\_utilities/index2position}
+\textsl{[ self\_organized\_map\_utilities ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo48}
+\label{ch:self_organized_map_utilities_index2position}
+\index{unsorted!index2position}\index{Functions!index2position}
+\textbf{NAME}
+\begin{verbatim}
+   position2index
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+    Subroutine to calculate the position ix,iy,iz inside a rectangular grid from index
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!========================================================================================
+  subroutine index2position(index_,nx,ny,nz,cx,cy,cz)
+!========================================================================================
+  integer,intent(inout) :: index_,nx,ny,nz
+  integer,intent(inout) :: cx,cy,cz
+\end{verbatim}
+\newpage
+\subsection{self\_organized\_map\_utilities/position2index}
+\textsl{[ self\_organized\_map\_utilities ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo49}
+\label{ch:self_organized_map_utilities_position2index}
+\index{unsorted!position2index}\index{Functions!position2index}
+\textbf{NAME}
+\begin{verbatim}
+   position2index
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+    Function to calculate the index inside a rectangular grid from position ix,iy,iz
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!========================================================================================
+  function position2index(ix,iy,iz,nx,ny) result(index_)
+!========================================================================================
+    integer,intent(inout) :: ix,iy,iz,nx,ny
+    integer ::index_
+\end{verbatim}
+\newpage
+\subsection{self\_organized\_map\_utilities/predict}
+\textsl{[ self\_organized\_map\_utilities ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo50}
+\label{ch:self_organized_map_utilities_predict}
+\index{unsorted!predict}\index{Functions!predict}
+\textbf{NAME}
+\begin{verbatim}
+   predict
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+   Prediction function for self_organized_map 
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!========================================================================================
+ subroutine predict_som(kohonen_map,input_data,map_output)
+!========================================================================================
+   class(self_organized_map) :: kohonen_map
+   type(kohonen_pattern),dimension(:),intent(inout) :: input_data
+   integer,dimension(:,:),intent(out) :: map_output
+\end{verbatim}
+\newpage
+\subsection{self\_organized\_map\_utilities/print}
+\textsl{[ self\_organized\_map\_utilities ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo51}
+\label{ch:self_organized_map_utilities_print}
+\index{unsorted!print}\index{Functions!print}
+\textbf{NAME}
+\begin{verbatim}
+   print
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+   Print function for self_organized_map 
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!========================================================================================
+ subroutine print_som(kohonen_map,unit_)
+!========================================================================================
+ class(self_organized_map) :: kohonen_map
+ integer,intent(inout),optional :: unit_
+\end{verbatim}
+\newpage
+\subsection{self\_organized\_map\_utilities/query\_som}
+\textsl{[ self\_organized\_map\_utilities ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo52}
+\label{ch:self_organized_map_utilities_query_som}
+\index{unsorted!query\_som}\index{Functions!query\_som}
+\textbf{NAME}
+\begin{verbatim}
+   query_som
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+   Function to find the input samples associated with specific vector 
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!========================================================================================
+ subroutine query_som(kohonen_map,input_pattern,sample_index) !,output_patterns)
+!========================================================================================
+   class(self_organized_map) :: kohonen_map
+   real(kind=8),dimension(:,:),intent(inout) :: input_pattern
+   integer,allocatable :: sample_index(:)
+\end{verbatim}
+\newpage
+\subsection{self\_organized\_map\_utilities/read\_som}
+\textsl{[ self\_organized\_map\_utilities ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo53}
+\label{ch:self_organized_map_utilities_read_som}
+\index{unsorted!read\_som}\index{Functions!read\_som}
+\textbf{NAME}
+\begin{verbatim}
+   read_som
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+    Subroutine to read the prototypes to define a self_organized_map 
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!========================================================================================
+ subroutine read_som(kohonen_map,som_fl)
+!========================================================================================
+   class(self_organized_map) :: kohonen_map
+   character(len=*) :: som_fl
+\end{verbatim}
+\newpage
+\subsection{self\_organized\_map\_utilities/self\_organized\_map}
+\textsl{[ self\_organized\_map\_utilities ]}
+\textsl{[ Classes ]}
+
+\label{ch:robo54}
+\label{ch:self_organized_map_utilities_self_organized_map}
+\index{unsorted!self\_organized\_map}\index{Classes!self\_organized\_map}
+\textbf{NAME}
+\begin{verbatim}
+   self_organized_map
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+   Class to represent a self_organized_map
+\end{verbatim}
+\textbf{ATTRIBUTES}
+\begin{verbatim}
+    type(kohonen_prototype),allocatable :: grid(:,:,:)
+    integer,allocatable :: number_patterns(:,:,:),cells_index(:,:)
+    real(kind=8),allocatable :: u_matrix(:,:,:),distance(:,:)
+    real(kind=8),allocatable :: cells_distances(:,:),coordinates(:,:)
+    type(kohonen_layer_parameters) :: parameters
+    type(factory_distance) :: factory
+    class(distance_base),allocatable :: distance_function
+    real(kind=8),allocatable :: distortion(:)
+! 
+    integer,allocatable :: grid_pattern_index(:,:,:),list_node_grid(:,:,:,:)
+!    
+  contains
+\end{verbatim}
+\textbf{METHODS}
+\begin{verbatim}
+    procedure,public :: create => create_som
+    procedure,public :: destroy => destroy_som
+    procedure,private :: train_som_data
+    procedure,public :: train => train_som_data 
+    procedure,public :: predict => predict_som
+    procedure,public :: print => print_som
+    procedure,public :: read => read_som
+    procedure,public :: get_count => get_count_som
+    procedure,public :: query => query_som
+    procedure,public :: get_prototypes
+    !procedure,public :: get_index => get_index_som
+    !procedure,public :: get_u_matrix => get_u_matrix_som
+    procedure,private :: find_best_match_unit
+    procedure,private :: update_weights
+!    procedure,private :: update_weights1
+    procedure,private :: find_bmu_grid
+    procedure,private :: calculate_u_matrix
+    procedure,private :: calculate_sigma
+!
+    procedure,nopass,private :: position2index
+    procedure,nopass,private :: index2position
+    procedure,nopass,private :: calculate_distance_matrix
+    procedure,nopass,private :: calculate_coordinates
+    procedure,private :: calculate_distance_between_prototypes
+!    
+    procedure,nopass,public :: external_train_map
+    procedure,nopass,public :: external_predict_map
+\end{verbatim}
+\newpage
+\subsection{self\_organized\_map\_utilities/train\_som\_data}
+\textsl{[ self\_organized\_map\_utilities ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo55}
+\label{ch:self_organized_map_utilities_train_som_data}
+\index{unsorted!train\_som\_data}\index{Functions!train\_som\_data}
+\textbf{NAME}
+\begin{verbatim}
+   train_som_data
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+   Training function for self_organized_map 
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!========================================================================================
+ subroutine train_som_data(kohonen_map,input_data)
+!========================================================================================
+   class(self_organized_map) :: kohonen_map
+   type(kohonen_pattern),dimension(:),intent(inout) :: input_data
+\end{verbatim}
+\newpage
+\subsection{self\_organized\_map\_utilities/update\_weights}
+\textsl{[ self\_organized\_map\_utilities ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo56}
+\label{ch:self_organized_map_utilities_update_weights}
+\index{unsorted!update\_weights}\index{Functions!update\_weights}
+\textbf{NAME}
+\begin{verbatim}
+   update_weights
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+    Subroutine to update the weights   
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!========================================================================================
+ subroutine update_weights(kohonen_map,current_values,ihit,jhit,khit,&
+            maximum_radius,iteration) 
+!========================================================================================
+  class(self_organized_map) :: kohonen_map
+  real(kind=8),dimension(:,:),intent(inout) :: current_values
+  integer,intent(inout) :: ihit,jhit,khit,iteration
+  real(kind=8),intent(inout) :: maximum_radius
+\end{verbatim}
+\newpage
+\section{Kohonen/two\_level\_self\_organized\_map\_utilities}
+\textsl{[ Modules ]}
+
+\label{ch:robo8}
+\label{ch:Kohonen_two_level_self_organized_map_utilities}
+\index{unsorted!two\_level\_self\_organized\_map\_utilities}\index{Modules!two\_level\_self\_organized\_map\_utilities}
+\textbf{NAME}
+\begin{verbatim}
+  MODULE two_level_self_organized_map_utilities
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+  In this module the two-level SOM is defined 
+\end{verbatim}
+\textbf{AUTHOR}
+\begin{verbatim}
+ Oscar Garcia-Cabrejo
+ NOTES 
+\end{verbatim}
+\textbf{MODIFICATION HISTORY}
+\newpage
+\subsection{two\_level\_self\_organized\_map\_utilities/calculate\_cluster\_measures}
+\textsl{[ two\_level\_self\_organized\_map\_utilities ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo61}
+\label{ch:two_level_self_organized_map_utilities_calculate_cluster_measures}
+\index{unsorted!calculate\_cluster\_measures}\index{Functions!calculate\_cluster\_measures}
+\textbf{NAME}
+\begin{verbatim}
+   calculate_cluster_measures
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+   Subroutine to calculate some clustering statistics of a two-level self_organized_map 
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!========================================================================================
+  subroutine calculate_cluster_measures(kohonen_map,results)
+!========================================================================================
+  class(two_level_self_organized_map) :: kohonen_map
+  real(kind=8),dimension(:,:,:) :: results
+\end{verbatim}
+\newpage
+\subsection{two\_level\_self\_organized\_map\_utilities/calculate\_coordinates}
+\textsl{[ two\_level\_self\_organized\_map\_utilities ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo62}
+\label{ch:two_level_self_organized_map_utilities_calculate_coordinates}
+\index{unsorted!calculate\_coordinates}\index{Functions!calculate\_coordinates}
+\textbf{NAME}
+\begin{verbatim}
+   calculate_coordinates
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+    Subroutine to calculate the coordinates of the units inside a kohonen layer 
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!========================================================================================
+  subroutine calculate_coordinates(current_index,ix,iy,iz,nx,ny,nz,coordinates,node_type)
+!========================================================================================
+  integer,intent(inout) :: current_index,ix,iy,iz,nx,ny,nz
+  real(kind=8),dimension(:,:),intent(out) :: coordinates
+  character(len=*),intent(in) :: node_type
+\end{verbatim}
+\newpage
+\subsection{two\_level\_self\_organized\_map\_utilities/calculate\_distance\_between\_prototypes}
+\textsl{[ two\_level\_self\_organized\_map\_utilities ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo63}
+\label{ch:two_level_self_organized_map_utilities_calculate_distance_between_prototypes}
+\index{unsorted!calculate\_distance\_between\_prototypes}\index{Functions!calculate\_distance\_between\_prototypes}
+\textbf{NAME}
+\begin{verbatim}
+   calculate_distance_between_prototypes
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+    Subroutine to calculate distance between prototypes
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!========================================================================================
+ subroutine calculate_distance_between_prototypes(kohonen_map)
+!========================================================================================
+  class(two_level_self_organized_map) :: kohonen_map
+\end{verbatim}
+\newpage
+\subsection{two\_level\_self\_organized\_map\_utilities/calculate\_distance\_matrix}
+\textsl{[ two\_level\_self\_organized\_map\_utilities ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo64}
+\label{ch:two_level_self_organized_map_utilities_calculate_distance_matrix}
+\index{unsorted!calculate\_distance\_matrix}\index{Functions!calculate\_distance\_matrix}
+\textbf{NAME}
+\begin{verbatim}
+   calculate_distance_matrix
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+    Subroutine to calculate the distance between the units inside a kohonen layer 
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!========================================================================================
+  subroutine calculate_distance_matrix(coordinates,distance_matrix,grid_type,toroidal)
+!========================================================================================
+  real(kind=8),dimension(:,:),intent(inout) :: coordinates,distance_matrix
+  character(len=*) :: grid_type
+  logical :: toroidal
+\end{verbatim}
+\newpage
+\subsection{two\_level\_self\_organized\_map\_utilities/calculate\_sum2\_clusters\_grid}
+\textsl{[ two\_level\_self\_organized\_map\_utilities ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo65}
+\label{ch:two_level_self_organized_map_utilities_calculate_sum2_clusters_grid}
+\index{unsorted!calculate\_sum2\_clusters\_grid}\index{Functions!calculate\_sum2\_clusters\_grid}
+\textbf{NAME}
+\begin{verbatim}
+   calculate_sum2_clusters_grid
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+   Subroutine to calculate some clustering statistics of a two-level self_organized_map 
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!========================================================================================
+  subroutine calculate_sum2_clusters_grid(kohonen_map,results)
+!========================================================================================
+  class(two_level_self_organized_map) :: kohonen_map
+  real(kind=8),dimension(:),optional :: results
+\end{verbatim}
+\newpage
+\subsection{two\_level\_self\_organized\_map\_utilities/create}
+\textsl{[ two\_level\_self\_organized\_map\_utilities ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo66}
+\label{ch:two_level_self_organized_map_utilities_create}
+\index{unsorted!create}\index{Functions!create}
+\textbf{NAME}
+\begin{verbatim}
+   create
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+   Constructor of a two_level self_organized_map 
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!========================================================================================
+ subroutine create_2lsom(kohonen_map,training_parameters)
+!========================================================================================
+   class(two_level_self_organized_map) :: kohonen_map
+   type(kohonen_layer_parameters),dimension(:) :: training_parameters
+\end{verbatim}
+\newpage
+\subsection{two\_level\_self\_organized\_map\_utilities/destroy}
+\textsl{[ two\_level\_self\_organized\_map\_utilities ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo67}
+\label{ch:two_level_self_organized_map_utilities_destroy}
+\index{unsorted!destroy}\index{Functions!destroy}
+\textbf{NAME}
+\begin{verbatim}
+   destroy
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+   Destructor of a two_level self_organized_map 
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!========================================================================================
+ subroutine destroy_2lsom(kohonen_map)
+!========================================================================================
+   class(two_level_self_organized_map) :: kohonen_map
+\end{verbatim}
+\newpage
+\subsection{two\_level\_self\_organized\_map\_utilities/evaluate\_2lsom}
+\textsl{[ two\_level\_self\_organized\_map\_utilities ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo68}
+\label{ch:two_level_self_organized_map_utilities_evaluate_2lsom}
+\index{unsorted!evaluate\_2lsom}\index{Functions!evaluate\_2lsom}
+\textbf{NAME}
+\begin{verbatim}
+   evaluate_2lsom
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+   Subroutine to calculate some clustering statistics of a two-level self_organized_map 
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!========================================================================================  
+  subroutine evaluate_2lsom(kohonen_map,input_data,results)
+!========================================================================================
+   class(two_level_self_organized_map) :: kohonen_map
+   type(kohonen_pattern),dimension(:),intent(inout) :: input_data
+   real(kind=8),dimension(:),optional :: results
+\end{verbatim}
+\newpage
+\subsection{two\_level\_self\_organized\_map\_utilities/get\_cluster\_samples}
+\textsl{[ two\_level\_self\_organized\_map\_utilities ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo69}
+\label{ch:two_level_self_organized_map_utilities_get_cluster_samples}
+\index{unsorted!get\_cluster\_samples}\index{Functions!get\_cluster\_samples}
+\textbf{NAME}
+\begin{verbatim}
+   get_cluster_samples
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+   Accessor to cluster results obtained using a two-level self_organized_map 
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!======================================================================================== 
+  subroutine get_cluster_samples(kohonen_map,clusters)
+!========================================================================================
+  class(two_level_self_organized_map) :: kohonen_map
+  integer,dimension(:),intent(inout) :: clusters
+\end{verbatim}
+\newpage
+\subsection{two\_level\_self\_organized\_map\_utilities/index2position}
+\textsl{[ two\_level\_self\_organized\_map\_utilities ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo70}
+\label{ch:two_level_self_organized_map_utilities_index2position}
+\index{unsorted!index2position}\index{Functions!index2position}
+\textbf{NAME}
+\begin{verbatim}
+   index2position
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+    Subroutine to calculate the position ix,iy,iz inside a rectangular grid from index
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!========================================================================================
+  subroutine index2position(index_,nx,ny,nz,cx,cy,cz)
+!========================================================================================
+  integer,intent(inout) :: index_,nx,ny,nz
+  integer,intent(inout) :: cx,cy,cz
+\end{verbatim}
+\newpage
+\subsection{two\_level\_self\_organized\_map\_utilities/position2index}
+\textsl{[ two\_level\_self\_organized\_map\_utilities ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo71}
+\label{ch:two_level_self_organized_map_utilities_position2index}
+\index{unsorted!position2index}\index{Functions!position2index}
+\textbf{NAME}
+\begin{verbatim}
+   position2index
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+    Function to calculate the index inside a rectangular grid from position ix,iy,iz
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!========================================================================================
+  function position2index(ix,iy,iz,nx,ny) result(index_)
+!========================================================================================
+    integer,intent(inout) :: ix,iy,iz,nx,ny
+    integer ::index_
+\end{verbatim}
+\newpage
+\subsection{two\_level\_self\_organized\_map\_utilities/predict\_2lsom}
+\textsl{[ two\_level\_self\_organized\_map\_utilities ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo72}
+\label{ch:two_level_self_organized_map_utilities_predict_2lsom}
+\index{unsorted!predict\_2lsom}\index{Functions!predict\_2lsom}
+\textbf{NAME}
+\begin{verbatim}
+   predict_2lsom
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+   Subroutine to make a prediction from a trained two_level self_organized_map 
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!========================================================================================
+ subroutine predict_2lsom(kohonen_map,input_data,map_output)
+!========================================================================================
+   class(two_level_self_organized_map) :: kohonen_map
+   type(kohonen_pattern),dimension(:),intent(inout) :: input_data
+   integer,dimension(:,:),intent(out) :: map_output
+\end{verbatim}
+\newpage
+\subsection{two\_level\_self\_organized\_map\_utilities/print\_2lsom}
+\textsl{[ two\_level\_self\_organized\_map\_utilities ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo73}
+\label{ch:two_level_self_organized_map_utilities_print_2lsom}
+\index{unsorted!print\_2lsom}\index{Functions!print\_2lsom}
+\textbf{NAME}
+\begin{verbatim}
+   print_2lsom
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+   Subroutine to print the layers of a two_level self_organized_map 
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!========================================================================================
+  subroutine print_2lsom(kohonen_map,unit_)
+!========================================================================================
+    class(two_level_self_organized_map) :: kohonen_map
+    integer,optional :: unit_
+\end{verbatim}
+\newpage
+\subsection{two\_level\_self\_organized\_map\_utilities/query\_som}
+\textsl{[ two\_level\_self\_organized\_map\_utilities ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo74}
+\label{ch:two_level_self_organized_map_utilities_query_som}
+\index{unsorted!query\_som}\index{Functions!query\_som}
+\textbf{NAME}
+\begin{verbatim}
+   query_som
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+   Function to find the input samples associated with specific vector 
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!========================================================================================
+ subroutine query_2lsom(kohonen_map,input_pattern,sample_index) !,output_patterns)
+!========================================================================================
+   class(two_level_self_organized_map) :: kohonen_map
+   real(kind=8),dimension(:,:),intent(inout) :: input_pattern
+   integer,allocatable :: sample_index(:)
+\end{verbatim}
+\newpage
+\subsection{two\_level\_self\_organized\_map\_utilities/set\_cluster\_layer}
+\textsl{[ two\_level\_self\_organized\_map\_utilities ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo75}
+\label{ch:two_level_self_organized_map_utilities_set_cluster_layer}
+\index{unsorted!set\_cluster\_layer}\index{Functions!set\_cluster\_layer}
+\textbf{NAME}
+\begin{verbatim}
+   set_cluster_layer
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+   Subroutine to initialize the cluster layer of a Two Level Self-Organizing Map
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!========================================================================================  
+ subroutine set_cluster_layer(kohonen_map,seed)
+!========================================================================================  
+ class(two_level_self_organized_map) :: kohonen_map
+ integer :: seed
+!
+ integer :: ix,number_clusters,ierr
+ real(kind=8),allocatable :: input(:,:)
+\end{verbatim}
+\newpage
+\subsection{two\_level\_self\_organized\_map\_utilities/set\_parameters}
+\textsl{[ two\_level\_self\_organized\_map\_utilities ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo76}
+\label{ch:two_level_self_organized_map_utilities_set_parameters}
+\index{unsorted!set\_parameters}\index{Functions!set\_parameters}
+\textbf{NAME}
+\begin{verbatim}
+   set_parameters
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+   Subroutine to set parameters
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!========================================================================================  
+ subroutine set_parameters(kohonen_map,training_parameters)
+!========================================================================================  
+ class(two_level_self_organized_map) :: kohonen_map
+ type(kohonen_layer_parameters),dimension(2) :: training_parameters
+\end{verbatim}
+\newpage
+\subsection{two\_level\_self\_organized\_map\_utilities/train\_2lsom}
+\textsl{[ two\_level\_self\_organized\_map\_utilities ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo77}
+\label{ch:two_level_self_organized_map_utilities_train_2lsom}
+\index{unsorted!train\_2lsom}\index{Functions!train\_2lsom}
+\textbf{NAME}
+\begin{verbatim}
+   train_2lsom
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+   Subroutine to train a two_level self_organized_map 
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!========================================================================================
+ subroutine train_2lsom(kohonen_map,input_data)
+!========================================================================================
+   class(two_level_self_organized_map) :: kohonen_map
+   type(kohonen_pattern),dimension(:),intent(inout) :: input_data
+\end{verbatim}
+\newpage
+\subsection{two\_level\_self\_organized\_map\_utilities/train\_cluster\_layer}
+\textsl{[ two\_level\_self\_organized\_map\_utilities ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo78}
+\label{ch:two_level_self_organized_map_utilities_train_cluster_layer}
+\index{unsorted!train\_cluster\_layer}\index{Functions!train\_cluster\_layer}
+\textbf{NAME}
+\begin{verbatim}
+   train_cluster_layer
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+   Subroutine to train the cluster layer of a two_level self_organized_map 
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!========================================================================================
+  subroutine train_cluster_layer(kohonen_map)
+!========================================================================================
+   class(two_level_self_organized_map) :: kohonen_map
+\end{verbatim}
+\newpage
+\subsection{two\_level\_self\_organized\_map\_utilities/train\_grid\_layer}
+\textsl{[ two\_level\_self\_organized\_map\_utilities ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo79}
+\label{ch:two_level_self_organized_map_utilities_train_grid_layer}
+\index{unsorted!train\_grid\_layer}\index{Functions!train\_grid\_layer}
+\textbf{NAME}
+\begin{verbatim}
+   train_grid_layer
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+   Subroutine to train the grid layer of a two_level self_organized_map 
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!========================================================================================
+  subroutine train_grid_layer(kohonen_map,input_data)
+!========================================================================================
+   class(two_level_self_organized_map) :: kohonen_map
+   type(kohonen_pattern),dimension(:),intent(inout) :: input_data
+\end{verbatim}
+\newpage
+\subsection{two\_level\_self\_organized\_map\_utilities/two\_level\_self\_organized\_map}
+\textsl{[ two\_level\_self\_organized\_map\_utilities ]}
+\textsl{[ Classes ]}
+
+\label{ch:robo80}
+\label{ch:two_level_self_organized_map_utilities_two_level_self_organized_map}
+\index{unsorted!two\_level\_self\_organized\_map}\index{Classes!two\_level\_self\_organized\_map}
+\textbf{NAME}
+\begin{verbatim}
+   two_level_self_organized_map
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+   Class to represent a two level self_organized_map
+\end{verbatim}
+\textbf{ATTRIBUTES}
+\begin{verbatim}
+    type(kohonen_prototype),allocatable :: grid(:,:,:),cluster_layer(:)
+    real(kind=8),allocatable :: coordinates(:,:)
+    integer,allocatable :: number_patterns(:,:,:),cells_index(:,:)
+    integer,allocatable :: cluster_number_patterns(:),cluster_cells_index(:,:)
+    integer,allocatable :: grid_cluster(:,:,:),cluster_samples(:)
+    real(kind=8),allocatable :: u_matrix(:,:,:),distance(:,:),cells_distances(:,:)
+    integer,allocatable :: number_cluster_samples(:),index_cluster_samples(:,:)
+    type(kohonen_layer_parameters),dimension(2) :: parameters
+    type(factory_distance) :: factory
+    class(distance_base),allocatable :: distance_function
+    integer :: number_variables,number_variables1,number_variables2,number_clusters
+    integer :: number_nodes
+  contains
+\end{verbatim}
+\textbf{METHODS}
+\begin{verbatim}
+    procedure,public :: create => create_2lsom
+    procedure,public :: destroy => destroy_2lsom
+    procedure,public :: train => train_2lsom
+    procedure,public :: predict => predict_2lsom
+    procedure,public :: train_grid_layer
+    procedure,public :: train_cluster_layer
+    procedure,public :: print => print_2lsom
+    procedure,public :: query => query_2lsom
+    procedure,public :: set_cluster_layer
+    procedure,public :: set_parameters
+!    procedure,public :: read => read_som
+    procedure,private :: query_2lsom
+    procedure,public :: read_som_layer
+    procedure,private :: calculate_u_matrix
+    procedure,private :: find_best_match_unit
+    procedure,private :: update_weights
+    procedure,private :: calculate_distance_between_prototypes
+    procedure,private :: assign_input_to_clusters
+    !procedure,public :: get_count => get_count_2lsom
+    !procedure,public :: get_index => get_index_som
+    !procedure,public :: get_u_matrix => get_u_matrix_som
+    procedure,public :: calculate_sum2_clusters_samples => evaluate_2lsom
+    procedure,public :: get_cluster_samples
+    procedure,public :: calculate_sum2_clusters_grid
+    procedure,nopass,private :: calculate_distance_matrix
+    procedure,nopass,private :: calculate_coordinates
+\end{verbatim}
+\newpage
+\subsubsection{two\_level\_self\_organized\_map/assign\_input\_to\_clusters}
+\textsl{[ two\_level\_self\_organized\_map ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo57}
+\label{ch:two_level_self_organized_map_assign_input_to_clusters}
+\index{unsorted!assign\_input\_to\_clusters}\index{Functions!assign\_input\_to\_clusters}
+\textbf{NAME}
+\begin{verbatim}
+   assign_input_to_clusters
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+    Subroutine to assign input to clusters
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!======================================================================================== 
+ subroutine assign_input_to_clusters(kohonen_map,input_patterns)
+!========================================================================================
+ class(two_level_self_organized_map) :: kohonen_map
+ type(kohonen_pattern),dimension(:),intent(inout) :: input_patterns
+\end{verbatim}
+\newpage
+\subsubsection{two\_level\_self\_organized\_map/calculate\_u\_matrix}
+\textsl{[ two\_level\_self\_organized\_map ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo58}
+\label{ch:two_level_self_organized_map_calculate_u_matrix}
+\index{unsorted!calculate\_u\_matrix}\index{Functions!calculate\_u\_matrix}
+\textbf{NAME}
+\begin{verbatim}
+   calculate_u_matrix
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+    Subroutine to calculate  the u_matrix
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!========================================================================================
+ subroutine calculate_u_matrix(kohonen_map)
+!========================================================================================
+ class(two_level_self_organized_map) :: kohonen_map
+\end{verbatim}
+\newpage
+\subsubsection{two\_level\_self\_organized\_map/find\_best\_match\_unit}
+\textsl{[ two\_level\_self\_organized\_map ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo59}
+\label{ch:two_level_self_organized_map_find_best_match_unit}
+\index{unsorted!find\_best\_match\_unit}\index{Functions!find\_best\_match\_unit}
+\textbf{NAME}
+\begin{verbatim}
+   find_best_match_unit
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+    Subroutine to calculate the best match unit  
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!========================================================================================
+ subroutine find_best_match_unit(kohonen_map,current_prototype,ihit,jhit,khit,dist_hit)
+!========================================================================================
+   class(two_level_self_organized_map) :: kohonen_map
+   type(kohonen_prototype),intent(inout) :: current_prototype
+   integer,intent(out) :: ihit,jhit,khit
+   real(kind=8),intent(out) :: dist_hit
+\end{verbatim}
+\newpage
+\subsubsection{two\_level\_self\_organized\_map/read\_som\_layer}
+\textsl{[ two\_level\_self\_organized\_map ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo60}
+\label{ch:two_level_self_organized_map_read_som_layer}
+\index{unsorted!read\_som\_layer}\index{Functions!read\_som\_layer}
+\textbf{NAME}
+\begin{verbatim}
+   read_som_layer
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+    Subroutine to read the prototypes of the first/seconf layer of a two level 
+    self_organized_map 
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!========================================================================================
+ subroutine read_som_layer(kohonen_map,som_fl,layer_type)
+!========================================================================================
+   class(two_level_self_organized_map) :: kohonen_map
+   character(len=*) :: som_fl,layer_type
+\end{verbatim}
+\newpage
+\subsection{two\_level\_self\_organized\_map\_utilities/update\_weights}
+\textsl{[ two\_level\_self\_organized\_map\_utilities ]}
+\textsl{[ Functions ]}
+
+\label{ch:robo81}
+\label{ch:two_level_self_organized_map_utilities_update_weights}
+\index{unsorted!update\_weights}\index{Functions!update\_weights}
+\textbf{NAME}
+\begin{verbatim}
+   update_weights
+\end{verbatim}
+\textbf{PURPOSE}
+\begin{verbatim}
+    Subroutine to update the weights   
+\end{verbatim}
+\textbf{SYNOPSIS}
+\begin{verbatim}
+!========================================================================================
+ subroutine update_weights(kohonen_map,current_values,ihit,jhit,khit,&
+            maximum_radius,iteration) 
+!========================================================================================
+  class(two_level_self_organized_map) :: kohonen_map
+  real(kind=8),dimension(:,:),intent(inout) :: current_values
+  integer,intent(inout) :: ihit,jhit,khit,iteration
+  real(kind=8),intent(inout) :: maximum_radius
+\end{verbatim}
+\newpage
+\section{ROBODoc/ROBODoc Cascading Style Sheet}
+\textsl{[ Modules ]}
+
+\label{ch:robo9}
+\label{ch:ROBODoc_ROBODoc_Cascading_Style_Sheet}
+\index{unsorted!ROBODoc Cascading Style Sheet}\index{Modules!ROBODoc Cascading Style Sheet}
+\printindex
+\end{document}
