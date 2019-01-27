@@ -33,3 +33,9 @@
 *.out
 *.app
 *.som
+
+# Latex intermediate files
+*.log
+*.idx
+*.aux
+*.toc
