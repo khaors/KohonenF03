@@ -293,7 +293,7 @@ end type two_level_self_organized_map
 !========================================================================================
    class(two_level_self_organized_map) :: kohonen_map
    type(kohonen_pattern),dimension(:),intent(inout) :: input_data
-!
+!*****
    call train_grid_layer(kohonen_map,input_data);
 !
    call train_cluster_layer(kohonen_map);
@@ -1014,7 +1014,7 @@ end subroutine predict_2lsom
 !
  integer :: ix,number_clusters,ierr
  real(kind=8),allocatable :: input(:,:)
-!
+!*****
    number_clusters=kohonen_map%parameters(2)%number_nodes_nx*&
    kohonen_map%parameters(2)%number_nodes_ny*&
    kohonen_map%parameters(2)%number_nodes_nz;
@@ -1049,7 +1049,7 @@ end subroutine predict_2lsom
 !========================================================================================  
  class(two_level_self_organized_map) :: kohonen_map
  type(kohonen_layer_parameters),dimension(2) :: training_parameters
-!
+!*****
  kohonen_map%parameters=training_parameters;
 !
  end subroutine set_parameters
@@ -1459,7 +1459,7 @@ end subroutine predict_2lsom
    write(*,*)
 !
  end subroutine read_som_layer
-!****f* self_organized_map_utilities/query_som
+!****f* two_level_self_organized_map_utilities/query_som
 ! NAME
 !   query_som
 ! PURPOSE
@@ -1619,7 +1619,7 @@ end subroutine predict_2lsom
   integer,intent(inout) :: current_index,ix,iy,iz,nx,ny,nz
   real(kind=8),dimension(:,:),intent(out) :: coordinates
   character(len=*),intent(in) :: node_type
-!
+!*****
   coordinates(current_index,1)=dble(ix);
   coordinates(current_index,2)=dble(iy);
   coordinates(current_index,3)=dble(iz);
@@ -1678,7 +1678,7 @@ end subroutine predict_2lsom
   return
 !
  end subroutine find_best_match_unit
-!****f* self_organized_map_utilities/update_weights
+!****f* two_level_self_organized_map_utilities/update_weights
 ! NAME
 !   update_weights
 ! PURPOSE

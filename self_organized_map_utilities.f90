@@ -507,8 +507,6 @@ end type self_organized_map
     write(unit1,'(100I5)') ix, (kohonen_map%cells_index(ix,iy),&
           iy=1,size(kohonen_map%cells_index,2))
  enddo
-
- 
 !
  end subroutine print_som
 !****f* self_organized_map_utilities/get_count
