@@ -16,7 +16,7 @@ write(*,'(A,A,f10.5)') trim(name),' version: ',version
 write(*,*)
 write(*,*) 'Developed by: Oscar Garcia-Cabrejo'
 write(*,*)
-write(*,*) ' === This guy has Kojones ===  '
+write(*,*) ' === This guy has Kohones ===  '
 write(*,*)
 !
 call getarg(1,arg)
