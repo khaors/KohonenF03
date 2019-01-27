@@ -115,7 +115,8 @@ clean:
 kohonen_doc:
 	$(RD) --src C:\\GITProjects\\KohonenF03 --doc $@ --singledoc --latex --sections --rc robodoc.rc --altlatex  
 	$(PDF) $@.tex
-.PHONY:kohonen_html
-kohonen_html:
-		$(RD) --src C:\\GITProjects\\KohonenF03 --doc $@ --multidoc --index --html
+#
+.PHONY:docs
+docs:
+	$(RD) --src C:\\GITProjects\\KohonenF03 --doc $@ --multidoc --index --html
 
