@@ -17,8 +17,8 @@ euclidean                                         !DISTANCE TYPE(euclidean is th
 rectangular                                       !NODE TYPE(rectangular,hexagonal)
 gaussian                                          !NEIGHBORHOOD TYPE(bubble,gaussian)
 0                                                 !DEBUG LEVEL
-som_iris.dbg                                      !DEBUG FILE
-som_iris                                          !BASE NAME FOR THE OUTPUT FILES
+som_iris2l.dbg                                    !DEBUG FILE
+som_iris2l                                        !BASE NAME FOR THE OUTPUT FILES
 1                                                 !PRINT RESULTS
 1                                                 !TOROIDAL GRID(0=NO, 1=YES)
 LAYER2
