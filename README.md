@@ -4,17 +4,22 @@ A fortran 2003 library for Self-Organizing Maps
 
 ## Compilation
 
-Currently there are two programs implemented in the library _som_train_ and _som_predict_ which can be compiled using
+Currently there are two programs implemented in the library _som_train_, _som_predict_ and _two_level_som_train_ which can be compiled using
 
 ```
 make som_train
 ```
 
-and
-
 ```
 make som_predict
 ```
+
+and
+
+```
+make two_level_som_train
+```
+
 
 ## Parameter File Format
 
@@ -109,7 +114,7 @@ gaussian                                          !NEIGHBORHOOD TYPE
 
 ```
 
-The options are a direct extension of the _som_train_ program and these explained in the previous section. 
+The options are a direct extension of the _som_train_ program and these are explained in the previous section. 
 
 ## Testing
 
@@ -118,6 +123,11 @@ A simple example is included in the repository in which the goal is to find the 
 ```
 som_train som_train.par
 ```
+
+```
+two_level_som_train two_level_som_train.par
+```
+
 
 ## Documentation
 
