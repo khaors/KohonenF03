@@ -1,13 +1,39 @@
+!****h* Kohonen/influence_function_utilities
+!
+! NAME
+!  MODULE influence_function_utilities
+!
+! PURPOSE
+!  This module defines a class to calculate the influence functions required in Robust SOM 
+!
+! AUTHOR
+! Oscar Garcia-Cabrejo
 module influence_function_utilities
 !
 implicit none
+!*****
 !
+!****c* influence_function_utilities/influence_function
+! NAME
+!   influence_function
+! PURPOSE
+!   Class that represents an influence function
 type :: influence_function
+!
+! METHODS
+!
   contains
     procedure,public :: calculate => calculate_influence_function
+!*****    
 end type influence_function
 !
 contains
+!****f* influence_function_utilities/calculate_influence_function
+! NAME
+!   calculate_influence_function
+! PURPOSE
+!   Calculates the influence function
+! SYNOPSIS
 !========================================================================================
   function calculate_influence_function(my_function,type_,r) result(v)
 !========================================================================================
@@ -15,7 +41,7 @@ contains
   character(len=*) :: type_ 
   real(kind=8),intent(inout) :: r 
   real(kind=8) :: v
-!
+!*****
   real(kind=8) :: c,den
 !
   select case(trim(type_))
@@ -58,12 +84,18 @@ contains
   end select
 !  
   end function calculate_influence_function
+!****f* influence_function_utilities/sgn
+! NAME
+!   sgn
+! PURPOSE
+!   Sign function
+! SYNOPSIS 
 !========================================================================================
   function sgn(x) result(v)
 !======================================================================================== 
   real(kind=8),intent(inout) :: x
   real(kind=8) :: v
-!
+!*****
   if(x < 0.0d0) then 
      v=-1.0d0;
   else
