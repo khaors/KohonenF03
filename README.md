@@ -16,6 +16,51 @@ and
 make som_predict
 ```
 
+## Parameter File
+
+### SOM_TRAIN
+
+The structure of the parameter file of the _som_train_ program is the following:
+
+```
+!
+! Parameter file to the som_train program
+!
+! Here you can specify all the information related with this specific run of the program such as date and reason 
+! why you run the program in first place.
+! 
+!
+SOM_TRAIN_PARAMETERS
+0                                                 !SOM OPTION
+iris.dat                                          !FILE WITH INPUT PATTERNS
+150                                               !NUMBER OF PATTERNS
+4                                                 !NUMBER INPUT VARIABLES
+1 2 3 4                                           !COLUMNS
+normal_som                                        !SOM_TYPE (normal_som,visom)
+10 10 1                                           !NUMBER_NODES IN SOM (NODES IN X, Y AND Z)
+200                                               !NUMBER EPOCHS
+0.1                                               !LEARNING RATE
+12345                                             !RANDOM SEED
+euclidean                                         !DISTANCE TYPE(euclidean is the only option)
+rectangular                                       !NODE TYPE(rectangular,hexagonal)
+gaussian                                          !NEIGHBORHOOD TYPE(bubble,gaussian)
+0                                                 !DEBUG LEVEL
+som_iris.dbg                                      !DEBUG FILE
+som_iris                                          !BASE NAME FOR THE OUTPUT FILES
+1                                                 !TOROIDAL GRID(0=NO, 1=YES)
+```
+
+Some explanation of the parameters is included in the following lines:
+
+- SOM OPTION: 
+- SOM_TYPE: This refers to the type of SOM used in the analysis. Currently there are only two options: normal_som refers to the conventional SOM where the difference between the distance between the samples and the prototypes that define the map is minimized. visom is the  Visualisation induced Self-Organising Map (ViSOM) proposed by Yin and is equivalent to a 2D PCA of the original dataset. More details about this approach can be obtained [here](https://personalpages.manchester.ac.uk/staff/hujun.yin/mypublications/preprint-visom.pdf).
+- NUMBER NODES IN SOM: These three numbers define the size of the map where the high-dimensional information is projected. Only 2D projections is supported in these programs.
+- NODE TYPE: Maybe this is not the best word to describe this property but this refers to the topology of the map used in the 2D projection of the high-dimensional data. Currently two options are implemented: rectangular and hexagonal grids. The rectangular grid is the easiest to implement but it might induce some artifacts in the 2D representation due its rigid structure and therefore the hexagonal grid is always recommended. 
+- NEIGHBORHOOD TYPE: This option defines the region in the map that is modified when a sample is presented to the map. The simples option is _bubble_ that represents a squared region around the BMU (Best Matching Unit) with a defined size. The _gaussian_ neighborhood is the recommended option.
+- DEBUG LEVEL AND DEBUG FILE: This option is only for developers and a debug level greater than 0 prints more information about the inner workings of the map including reading the parameters, calculating the distortions, the weight updates and final results.
+- TOROIDAL GRID: If 1 then the sides of the map are connected in such a way that the 2D projection is done over a grid with donut-like shape. This avoids border effects that can induce artifacts in the clustering of high-dimensional datasets. 
+
+
 ## Testing
 
 A simple example is included in the repository in which the goal is to find the clusters present in the _iris_ dataset. This dataset is included in the _iris.dat_ file where the samples have been properly scaled in the range between 0 and 1. The input parameters of the program _som_train_ are specified in a parameter file. 
