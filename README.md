@@ -119,6 +119,12 @@ A simple example is included in the repository in which the goal is to find the 
 som_train som_train.par
 ```
 
+## Documentation
+
+The documentation of the library can be accessed in the following links:
+
+- [html files](https://github.com/khaors/KohonenF03/blob/master/kohonen_html/masterindex.html)
+
 
 ## Licensing, Authors, Acknowledgements
 KohonenF03 was written by Oscar Garcia-Cabrejo and is distributed under the [3-Clause BSD license](https://github.com/khaors/KohonenF03/blob/master/LICENSE). 
