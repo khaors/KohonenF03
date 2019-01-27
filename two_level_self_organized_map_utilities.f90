@@ -80,6 +80,9 @@ type,extends(kohonen_map_base) :: two_level_self_organized_map
     procedure,public :: calculate_sum2_clusters_grid
     procedure,nopass,private :: calculate_distance_matrix
     procedure,nopass,private :: calculate_coordinates
+!    
+    procedure,nopass,public :: external_train_map
+!    procedure,nopass,public :: external_predict_map    
 !*****   
 end type two_level_self_organized_map
 
@@ -2079,5 +2082,85 @@ end subroutine predict_2lsom
 !  enddo
 !
  end subroutine assign_input_to_clusters
+!****f* two_level_self_organized_map/external_train_map
+! NAME
+!   external_train_map
+! PURPOSE
+!    Subroutine to connect the two_level_self_organizing_map module to R o C
+! SYNOPSIS
+!========================================================================================
+ subroutine external_train_map(x,nvar,npat,som_type,nx1,ny1,nepoch1,alpha1,grid_type1,&
+            distance_type1,neigh_type1,toroidal1,nx2,nepoch2,alpha2,grid_type2,&
+            prot,distortion,u_matrix,coords,number_patterns,&
+            node_index) bind(C, name="train_2lsom_")
+!========================================================================================
+use, intrinsic :: iso_c_binding, only : c_double, c_int, c_char
+ real(kind=8),parameter :: version=0.1d0
+ character(len=*),parameter :: program_name="2lsom_train"
+ integer(c_int), intent(in) :: nvar,npat,som_type,nx1,ny1,nepoch1,toroidal1
+ real(c_double),intent(out) :: prot(nx1*ny1,nvar),distortion(nepoch1)
+ real(c_double),intent(out) :: u_matrix(2*nx1-1,2*ny1-1),coords(nx1*ny1,3)
+ integer(c_int),intent(out) :: number_patterns(nx1,ny1),node_index(npat,3)
+ real(c_double),intent(in) :: x(npat,nvar)
+ real(c_double),intent(in) :: alpha1,alpha2
+ integer(c_int),intent(in) :: grid_type1,distance_type1,neigh_type1
+ integer(c_int),intent(in) :: nx2,grid_type2,nepoch2 !,distance_type1,neigh_type2
+!*****
+ type(two_level_self_organized_map) :: my_som
+ type(kohonen_layer_parameters),dimension(1) :: parameters
+ real(kind=8),dimension(nvar,1) :: var
+ integer :: i,j,k,ierr,pos,ihit,jhit,khit,nx1a,ny1a
+ type(kohonen_pattern),allocatable :: input_patterns(:)
+ real(kind=8),dimension(nx1*ny1,nvar) :: prototypes
+ real(kind=8),dimension(nvar,1) :: temp
+!
+ parameters(1)%train_option=3;
+ parameters(1)%number_nodes_nx=nx1;
+ parameters(1)%number_nodes_ny=ny1;
+ parameters(1)%number_nodes_nz=1;
+ parameters(1)%number_variables1=nvar;
+ parameters(1)%number_variables2=1;
+ parameters(1)%number_variables=nvar;
+ parameters(1)%number_patterns=npat;
+ parameters(1)%number_epochs=nepoch1;
+ parameters(1)%learning_rate=alpha1;
+ parameters(1)%random_seed_=12345;
+!
+ select case(grid_type1)
+   case(0)
+     parameters(1)%node_type="rectangular";
+   case(1)
+     parameters(1)%node_type="hexagonal"; 
+ end select
+!  
+ parameters(1)%debug_level=0;
+ parameters(1)%debug_file="NOFILE";
+ parameters(1)%pattern_file="NOFILE";
+ parameters(1)%output_file="NOFILE";
+ parameters(1)%distance_type="euclidean"; !"euclidean" !euclidean, manhattan, correlation, correlation2
+!
+ select case(neigh_type1)
+   case(0)
+     parameters(1)%neighborhood_type="bubble";
+   case(1)
+     parameters(1)%neighborhood_type="gaussian";
+ end select  
+!
+ select case(som_type)
+   case(0)
+     parameters(1)%som_type="normal_som";!,visom, robust_som
+   case(1)
+     parameters(1)%som_type="visom";
+   case(2)
+     parameters(1)%som_type="robust_som";
+ end select
+!      
+ if(toroidal1 == 1) then
+   parameters(1)%toroidal_grid=.TRUE.;
+ else
+   parameters(1)%toroidal_grid=.FALSE.;
+ endif
+! 
+end subroutine external_train_map
 ! 
 end module two_level_self_organized_map_utilities
