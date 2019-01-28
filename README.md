@@ -2,6 +2,12 @@
 
 A fortran 2003 library for Self-Organizing Maps
 
+## Motivation
+
+Self-Organizing Maps or Kohonen Maps are powerful computational tools to cluster multivariate data using a topology preservation approach, that is, the clustering obtained by using this methodology is designed to preserve neighboring relationships between samples (closer samples in the input space remain closer in the output space).
+
+Two Level Self-Organizing Maps are important in many applied areas but currently there is not a proper implementation that suited my needs. So I decided to implement this clustering approach in Fortran using the features included in the new standard Fortran2003. This ensures computational efficiency and software extensibility, in addition to having to learn more about Fortran.
+
 ## Compilation
 
 Currently there are two programs implemented in the library _som_train_, _som_predict_ and _two_level_som_train_ which can be compiled using
@@ -134,7 +140,7 @@ two_level_som_train two_level_som_train.par
 The documentation of the library can be accessed in the following links:
 
 - [html files](https://khaors.github.io/KohonenF03/index.html)
-
+- [PDF File](https://github.com/khaors/KohonenF03/blob/master/KohonenF03_doc.pdf)
 
 ## Licensing, Authors, Acknowledgements
 KohonenF03 was written by Oscar Garcia-Cabrejo and is distributed under the [3-Clause BSD license](https://github.com/khaors/KohonenF03/blob/master/LICENSE). 
