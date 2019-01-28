@@ -73,7 +73,7 @@ implicit none
        do ivar=1,number_variables
           som_parameters(1)%column_var(ivar)=ivar;
        enddo
-       write(*,*) som_parameters(1)%column_var(ivar)
+       write(*,*) som_parameters(1)%column_var(1:number_variables);
      endif
    else
       read(ipar,*)
