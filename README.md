@@ -143,7 +143,7 @@ The documentation of the library can be accessed in the following links:
 - [PDF File](https://github.com/khaors/KohonenF03/blob/master/KohonenF03_doc.pdf)
 
 ## Licensing, Authors, Acknowledgements
-KohonenF03 was written by Oscar Garcia-Cabrejo and is distributed under the [3-Clause BSD license](https://github.com/khaors/KohonenF03/blob/master/LICENSE). 
+KohonenF03 was written by Oscar Garcia-Cabrejo and is distributed under the [GPL license](https://github.com/khaors/KohonenF03/blob/master/LICENSE). 
 
 You can cite KohonenF03 in research publications and reports as follows:
 * Garcia-Cabrejo, O. (2019). ***KohonenF03: A library for Self-Organizing Maps in Fortran 2003***. https://github.com/khaors/KohonenF03. Accessed: *day month year*.
