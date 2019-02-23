@@ -16,7 +16,8 @@ type kohonen_layer_parameters
   character(len=40) :: debug_file,pattern_file,output_file
   character(len=40) :: distance_type !euclidean, manhattan, correlation, correlation2
   character(len=40) :: neighborhood_type !gaussian,bubble
-  character(len=40) :: som_type !normal_som,visom
+  character(len=40) :: som_type !normal_som,visom,robust_som
+  character(len=40) :: m_estimator
   logical :: toroidal_grid
   ! UNITS FOR TRAINING OUTPUT
   integer :: idbg,iout,iindex,iprot,ihit,idist,iumat,ipar,isam,iclus,icen,iclus1,idisto
