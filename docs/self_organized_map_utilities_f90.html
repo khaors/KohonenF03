@@ -309,7 +309,7 @@
 
 <p>[ <a href="#robo_top_of_doc">Top</a> ] [ <a href="#robo7">self_organized_map_utilities</a> ] [ <a href="./robo_functions.html#robo_top_of_doc">Functions</a> ]</p>
 <p class="item_name">NAME</p>
-<pre>   <a href="./two_level_self_organized_map_utilities_f90.html#robo71">position2index</a>
+<pre>   <a href="./two_level_self_organized_map_utilities_f90.html#robo72">position2index</a>
 </pre>
 <p class="item_name">PURPOSE</p>
 <pre>    Subroutine to calculate the position ix,iy,iz inside a rectangular grid from index
@@ -445,8 +445,8 @@
   contains
 </pre>
 <p class="item_name">METHODS</p>
-<pre class="source">    procedure,public :: <a href="./two_level_self_organized_map_utilities_f90.html#robo66">create</a> =&gt; create_som
-    procedure,public :: <a href="#robo41">destroy</a> =&gt; destroy_som
+<pre class="source">    procedure,public :: <a href="./two_level_self_organized_map_utilities_f90.html#robo67">create</a> =&gt; create_som
+    procedure,public :: <a href="./two_level_self_organized_map_utilities_f90.html#robo68">destroy</a> =&gt; destroy_som
     procedure,private :: <a href="#robo55">train_som_data</a>
     procedure,public :: train =&gt; <a href="#robo55">train_som_data</a> 
     procedure,public :: <a href="#robo50">predict</a> =&gt; predict_som
@@ -457,17 +457,17 @@
     procedure,public :: <a href="#robo47">get_prototypes</a>
     !procedure,public :: get_index =&gt; get_index_som
     !procedure,public :: get_u_matrix =&gt; get_u_matrix_som
-    procedure,private :: <a href="./two_level_self_organized_map_utilities_f90.html#robo59">find_best_match_unit</a>
-    procedure,private :: <a href="./two_level_self_organized_map_utilities_f90.html#robo81">update_weights</a>
+    procedure,private :: <a href="#robo44">find_best_match_unit</a>
+    procedure,private :: <a href="./two_level_self_organized_map_utilities_f90.html#robo82">update_weights</a>
 !    procedure,private :: update_weights1
     procedure,private :: <a href="#robo45">find_bmu_grid</a>
-    procedure,private :: <a href="#robo39">calculate_u_matrix</a>
+    procedure,private :: <a href="./two_level_self_organized_map_utilities_f90.html#robo58">calculate_u_matrix</a>
     procedure,private :: <a href="#robo38">calculate_sigma</a>
 !
-    procedure,nopass,private :: <a href="./two_level_self_organized_map_utilities_f90.html#robo71">position2index</a>
-    procedure,nopass,private :: <a href="./two_level_self_organized_map_utilities_f90.html#robo70">index2position</a>
+    procedure,nopass,private :: <a href="./two_level_self_organized_map_utilities_f90.html#robo72">position2index</a>
+    procedure,nopass,private :: <a href="#robo48">index2position</a>
     procedure,nopass,private :: <a href="#robo37">calculate_distance_matrix</a>
-    procedure,nopass,private :: <a href="./two_level_self_organized_map_utilities_f90.html#robo62">calculate_coordinates</a>
+    procedure,nopass,private :: <a href="./two_level_self_organized_map_utilities_f90.html#robo63">calculate_coordinates</a>
     procedure,private :: <a href="#robo36">calculate_distance_between_prototypes</a>
 !    
     procedure,nopass,public :: <a href="#robo43">external_train_map</a>
@@ -517,7 +517,7 @@
 
 </div> <!-- content -->
 <div id="footer">
-<p>Generated from C:/GITProjects/KohonenF03/self_organized_map_utilities.f90 with <a href="http://www.xs4all.nl/~rfsber/Robo/robodoc.html">ROBODoc</a> V4.99.43 on Sun Jan 27 2019 06:58:31
+<p>Generated from C:/GITProjects/KohonenF03/self_organized_map_utilities.f90 with <a href="http://www.xs4all.nl/~rfsber/Robo/robodoc.html">ROBODoc</a> V4.99.43 on Sat Feb 23 2019 09:09:35
 </p>
 </div> <!-- footer -->
 </body>
