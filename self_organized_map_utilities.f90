@@ -865,6 +865,9 @@ end type self_organized_map
   real(kind=8) :: time_factor,current_radius,alpha,sigma2,h_neighborhood,real_distance,term3
   real(kind=8) :: distance_ratio,geometric_distance2,eps,current_distance,lambda
   type(influence_function) :: influence_func
+  real(kind=8),dimension(size(current_values,1),size(current_values,2)) :: v_vector
+  real(kind=8) :: v_vector_norm,r,Psi
+  character(len=40) :: m_estimator
 !
   nx=kohonen_map%parameters%number_nodes_nx;
   ny=kohonen_map%parameters%number_nodes_ny;
@@ -879,6 +882,8 @@ end type self_organized_map
  !alpha = max(kohonen_map%parameters%learning_rate*(1.0d0-real(iteration)/1000.0),0.01d0);
   alpha = max(kohonen_map%parameters%learning_rate*time_factor,0.01d0);
   sigma2=current_radius**2
+!
+  m_estimator=trim(kohonen_map%parameters%m_estimator);  
 !
   do ic=1,size(kohonen_map%coordinates,1)
      current_pos=position2index(ihit,jhit,khit,nx,ny);
@@ -924,6 +929,15 @@ end type self_organized_map
                endif
                       !write(*,*) iteration,dsqrt(real_distance),dsqrt(geometric_distance2)*lambda,distance_ratio
                  call kohonen_map%grid(ineigh,jneigh,kneigh)%set_prototype(prototype_values); 
+            case('robust_som')
+              call kohonen_map%grid(ineigh,jneigh,kneigh)%get_prototype(prototype_values);
+              prototype_values=prototype_values+h_neighborhood*(current_values-prototype_values);
+              ! v_vector=(current_values-prototype_values);
+              ! v_vector_norm=dsqrt(sum(v_vector**2));
+              ! r=v_vector_norm/sigma;
+              ! Psi=influence_func%calculate(m_estimator,r);
+              ! prototype_values=prototype_values+sigma*h_neighborhood*Psi*v_vector/v_vector_norm;
+              call kohonen_map%grid(ineigh,jneigh,kneigh)%set_prototype(prototype_values);
            end select
      endif
    enddo!ic
@@ -1334,9 +1348,13 @@ end type self_organized_map
       sample_index(i)=i;
    enddo
 !
-   call qsort%sort(sample_pos,sample_index);   
+   call qsort%sort(sample_pos,sample_index);
+!      
 !  define p vector (See Lopez-Rubio et al, 2015)
+!
    p_vector(1:nxyz,1:nvar)=input_data(sample_index(1:nxyz),1:nvar);
+!   
+!  Calculate the distance between the input data and the selected prototypes
 !
    do i=1,ndat
       do j=1,nxyz
@@ -1344,13 +1362,14 @@ end type self_organized_map
       enddo
    enddo
 !
-   ! do j=1,nxyz
-   !    current_sigma(1:ndat)=sigma_table(1:ndat,j);
-   !    !(sample_index(i)=i,i=1,ndat)
-   !    call qsort%sort(current_sigma,sample_index);
-   !    if(current_sigma(1) < 1d-10) then
-   !       current_sigma_value() 
-   ! enddo      
+   do j=1,nxyz
+      current_sigma(1:ndat)=sigma_table(1:ndat,j);
+      !(sample_index(i)=i,i=1,ndat)
+      call qsort%sort(current_sigma,sample_index);
+  !    if(current_sigma(1) > 1d-10) then
+  !       current_sigma_value()
+
+   enddo      
 !
    deallocate(sample_pos,sample_index,p_vector,sigma_table,current_sigma);   
 !
