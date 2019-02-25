@@ -8,7 +8,7 @@ use kohonen_pattern_utilities;
 !
 implicit none
 !
- type(self_organized_map) :: my_som
+ type(self_organized_map),save :: my_som
  type(kohonen_layer_parameters),dimension(1) :: som_parameters
  type(kohonen_pattern),allocatable :: input_patterns(:)
  real(kind=8),allocatable :: distance_matrix(:,:)

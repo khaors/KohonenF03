@@ -8,7 +8,7 @@ use two_level_self_organized_map_utilities;
 !
 implicit none;
 !
- type(two_level_self_organized_map) :: my_som
+ type(two_level_self_organized_map),save :: my_som
  type(kohonen_layer_parameters),dimension(2) :: som_parameters
  type(kohonen_pattern),allocatable :: input_patterns(:)
  integer :: ipattern
