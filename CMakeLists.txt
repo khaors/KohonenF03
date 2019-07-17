@@ -27,13 +27,13 @@ distance_base_utilities.f90 factory_distance_utilities.f90 euclidean_distance_ut
 #
 add_executable(two_level_som_extimate  two_level_som_estimate.f90 two_level_som_estimate_variables.f90 
 two_level_self_organized_map_utilities.f90 kohonen_layer_parameters_utilities.f90 kohonen_map_base_utilities.f90 
-kohonen_prototype_utilities.f90 kohonen_pattern_utilities.f90 distance_base_utilities.f90 factory_distance_utilities.f90 euclidean_distance_utilities.f90 mtmod.f90)
+kohonen_prototype_utilities.f90 kohonen_pattern_utilities.f90 distance_base_utilities.f90 factory_distance_utilities.f90 euclidean_distance_utilities.f90 quicksort_utilities.f90 sort_base_utilities.f90 mtmod.f90)
 #
 # Shared library kohonen
 #
 add_library(kohonen SHARED self_organized_map_utilities.f90 kohonen_layer_parameters_utilities.f90 kohonen_map_base_utilities.f90 
 kohonen_prototype_utilities.f90 kohonen_pattern_utilities.f90 mtmod.f90 distance_base_utilities.f90 factory_distance_utilities.f90 
-euclidean_distance_utilities.f90 general_utilities.f90)
+euclidean_distance_utilities.f90 general_utilities.f90 quicksort_utilities.f90 sort_base_utilities.f90)
 #
 # Add compiler options
 #
@@ -49,7 +49,7 @@ add_link_options(kohonen private -shared -s -static-libgcc)
 #   #add_link_options(nnet2 private -shared)
 #endif()
 #
-if (UNIX)
+#if (UNIX)
 #   message(status ">>> Working on Linux >>>")
 #   #add_compile_options(som_train private -std=f2003 -Wall -fall-intrinsics -fbounds-check -Ofast)
 #   #add_link_options(nnet2 private -shared)
