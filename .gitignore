@@ -39,3 +39,6 @@
 *.idx
 *.aux
 *.toc
+
+# Build folder
+build/
