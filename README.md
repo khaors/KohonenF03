@@ -34,6 +34,13 @@ cd build
 cmake ..
 ```
 
+KohonenF03 can also be compiled as a shared library using:
+
+```
+make libkohonen
+```
+
+or this is automatically generated using cmake.
 
 ## Parameter File Format
 
