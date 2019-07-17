@@ -10,7 +10,7 @@ Two Level Self-Organizing Maps are important in many applied areas but currently
 
 ## Compilation
 
-Currently there are two programs implemented in the library _som_train_, _som_predict_ and _two_level_som_train_ which can be compiled using
+Currently there are three programs implemented in the library _som_train_, _som_predict_ and _two_level_som_train_ which can be compiled using
 
 ```
 make som_train
@@ -24,6 +24,14 @@ and
 
 ```
 make two_level_som_train
+```
+
+In addition, you can compile these programs using cmake (version 3.14.6) using:
+
+```
+mkdir build 
+cd build
+cmake ..
 ```
 
 
