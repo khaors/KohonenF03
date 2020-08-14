@@ -9,7 +9,7 @@ use mtmod;
 !
 implicit none;
 !
- type(two_level_self_organized_map) :: my_som
+ type(two_level_self_organized_map),save :: my_som
  type(kohonen_layer_parameters),dimension(2) :: som_parameters
  type(kohonen_pattern),allocatable :: input_patterns(:)
  integer :: ipattern,number_clusters_evaluations,iseed,ic,current_cluster,neval,i,j
