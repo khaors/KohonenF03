@@ -82,7 +82,7 @@ quicksort_utilities.o: quicksort_utilities.f90 sort_base_utilities.o
 #                                  Executable Files
 ########################################################################################################
 
-all: som_train som_predict two_level_som_train two_level_som_estimate rsomlib
+all: som_train som_predict two_level_som_train two_level_som_estimate #rsomlib
 
 som_train: som_train.f90 som_train_variables.o self_organized_map_utilities.o kohonen_layer_parameters_utilities.o \
 kohonen_map_base_utilities.o kohonen_prototype_utilities.o kohonen_pattern_utilities.o mtmod.o distance_base_utilities.o \
@@ -115,7 +115,7 @@ general_utilities.f90
 #
 libkohonen: self_organized_map_utilities.f90 kohonen_layer_parameters_utilities.f90 kohonen_map_base_utilities.f90 \
 kohonen_prototype_utilities.f90 kohonen_pattern_utilities.f90 mtmod.f90 distance_base_utilities.f90 factory_distance_utilities.f90 \
-euclidean_distance_utilities.f90  general_utilities.f90
+euclidean_distance_utilities.f90 quicksort_utilities.f90 sort_base_utilities.f90  general_utilities.f90 
 	gfortran -shared -s -static-libgcc -o self_organized_map_utilities1.dll $^ 
 
 ###################################################################################################
