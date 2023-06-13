@@ -693,7 +693,7 @@ end type self_organized_map
 !========================================================================================
   function position2index(ix,iy,iz,nx,ny) result(index_)
 !========================================================================================
-    integer,intent(inout) :: ix,iy,iz,nx,ny
+    integer,intent(in) :: ix,iy,iz,nx,ny
     integer ::index_
 !*****
     index_=ix+(iy-1)*nx+(iz-1)*nx*ny
@@ -708,7 +708,7 @@ end type self_organized_map
 !========================================================================================
   subroutine index2position(index_,nx,ny,nz,cx,cy,cz)
 !========================================================================================
-  integer,intent(inout) :: index_,nx,ny,nz
+  integer,intent(in) :: index_,nx,ny,nz
   integer,intent(inout) :: cx,cy,cz
 !*****
 !  write(*,*) index_,nx,ny,1+int((index_-1)/(nx*ny))
@@ -777,7 +777,7 @@ end type self_organized_map
 !========================================================================================
   subroutine calculate_coordinates(current_index,ix,iy,iz,nx,ny,nz,coordinates,node_type)
 !========================================================================================
-  integer,intent(inout) :: current_index,ix,iy,iz,nx,ny,nz
+  integer,intent(in) :: current_index,ix,iy,iz,nx,ny,nz
   real(kind=8),dimension(:,:),intent(out) :: coordinates
   character(len=*),intent(in) :: node_type
 !*****
