@@ -8,8 +8,8 @@
 #
 #########################################################################################################
 FF = gfortran
-FFLAGS=-c -g -pg -std=f2003 -Wall -fall-intrinsics -fbounds-check 
-OFLAGS=-g -pg -std=f2003 -Wall -fall-intrinsics -fbounds-check  -o
+FFLAGS=-c -g -pg -std=f2003 -Wall -fall-intrinsics -fbounds-check -fopenmp
+OFLAGS=-g -pg -std=f2003 -Wall -fall-intrinsics -fbounds-check  -fopenmp -o
 RD = robodoc.exe 
 RDFLAGS1 = --src
 RDFLAGS2 = --doc 
@@ -92,7 +92,8 @@ sort_base_utilities.o general_utilities.o
 
 som_predict: som_predict.f90 som_predict_variables.o self_organized_map_utilities.o kohonen_layer_parameters_utilities.o \
 kohonen_map_base_utilities.o kohonen_prototype_utilities.o kohonen_pattern_utilities.o distance_base_utilities.o \
-factory_distance_utilities.o euclidean_distance_utilities.o  mtmod.o quicksort_utilities.o sort_base_utilities.o
+factory_distance_utilities.o euclidean_distance_utilities.o influence_function_utilities.o  mtmod.o quicksort_utilities.o \
+sort_base_utilities.o general_utilities.o
 	$(FF) $^  $(OFLAGS) $@
 
 two_level_som_train: two_level_som_train.f90 two_level_som_train_variables.o two_level_self_organized_map_utilities.o \
@@ -115,8 +116,16 @@ general_utilities.f90
 #
 libkohonen: self_organized_map_utilities.f90 kohonen_layer_parameters_utilities.f90 kohonen_map_base_utilities.f90 \
 kohonen_prototype_utilities.f90 kohonen_pattern_utilities.f90 mtmod.f90 distance_base_utilities.f90 factory_distance_utilities.f90 \
-euclidean_distance_utilities.f90 quicksort_utilities.f90 sort_base_utilities.f90  general_utilities.f90 
-	gfortran -shared -s -static-libgcc -o self_organized_map_utilities1.dll $^ 
+euclidean_distance_utilities.f90 influence_function_utilities.f90 quicksort_utilities.f90 sort_base_utilities.f90  general_utilities.f90 
+	$(FF) -shared  -lgfortran $^ -o self_organized_map_utilities.dll
+#	$(FF) -shared  -o self_organized_map_utilities1.dll $^
+#	$(FF) -shared -s -static-libgcc -o self_organized_map_utilities1.dll $^ 
+
+libkohonen1: self_organized_map_utilities.o kohonen_layer_parameters_utilities.o kohonen_map_base_utilities.o \
+kohonen_prototype_utilities.o kohonen_pattern_utilities.o mtmod.o distance_base_utilities.o factory_distance_utilities.o \
+euclidean_distance_utilities.o influence_function_utilities.o quicksort_utilities.o sort_base_utilities.o  general_utilities.o 
+	$(FF) -shared  $^ -o self_organized_map_utilities1.dll
+
 
 ###################################################################################################
 ####
