@@ -49,6 +49,8 @@ type,extends(kohonen_map_base) :: self_organized_map
     type(factory_distance) :: factory
     class(distance_base),allocatable :: distance_function
     real(kind=8),allocatable :: distortion(:)
+    type(influence_function) :: influence_func
+    real(kind=8) :: sigma_influence
 ! 
     integer,allocatable :: grid_pattern_index(:,:,:),list_node_grid(:,:,:,:)
 !    
@@ -237,13 +239,16 @@ end type self_organized_map
    integer :: kneigh,idbg,number_variables,idisto !neff,
    integer :: cx,cy,cz,i,j,k,number_nodes,debug_option,ix1,iy1,iz1,pos,pos1,max_pattern
    integer :: ierr,nx,ny,nz,ipos
-   integer :: current_pos,ic,itemp
+   integer :: current_pos,ic,itemp,M
    real(kind=8) :: distortion,dist,dist_hit,maximum_radius,minimum_radius
    real(kind=8) :: current_radius,alpha,u_temp
-   type(kohonen_prototype) :: current_prototype
+   type(kohonen_prototype) :: current_prototype,current_prototype1
    real(kind=8),dimension(kohonen_map%parameters%number_variables1,&
    kohonen_map%parameters%number_variables2) :: current_values
+   real(kind=8),dimension(kohonen_map%parameters%number_patterns,&
+       kohonen_map%parameters%number_variables1) :: current_values1
    integer,allocatable :: pattern_index(:,:,:,:),positions(:)
+   character(len=40) :: som_type
 !
 ! 
 !
@@ -262,11 +267,26 @@ end type self_organized_map
       number_variables=kohonen_map%parameters%number_variables1*kohonen_map%parameters%number_variables2;
       maximum_radius=real(max(kohonen_map%parameters%number_nodes_nx,kohonen_map%parameters%number_nodes_ny));
       minimum_radius=1.0d0;
+      som_type=trim(kohonen_map%parameters%som_type);
+      if(trim(som_type) == 'robust_som') then 
+         M=nx*ny*nz;
+         write(*,*) 'Robust SOM= ',size(input_data);
+         do i=1,size(input_data);
+            call input_data(i)%get(current_prototype1);
+            call current_prototype1%get_prototype(current_values);
+            current_values1(i,1:size(current_values1,2))=current_values(1:size(current_values1,2),1);
+            write(*,*) i,current_values1(i,:);
+         enddo
+
+         kohonen_map%sigma_influence=kohonen_map%influence_func%calculate_sigma1( current_values1,M);
+         write(*,*) 'sigma influence= ',kohonen_map%sigma_influence;
+         !stop;
+      endif
       write(*,*) 'SOM: Training starting...'
       do iepoch = 1,kohonen_map%parameters%number_epochs
         kohonen_map%distortion(iepoch)=distortion
          write(6,*) ' Starting epoch -- distortion',iepoch,' -- ',distortion
-         write(idisto,*) iepoch,distortion
+         !write(idisto,*) iepoch,distortion
          distortion = 0.0d0
          do ipattern = 1, kohonen_map%parameters%number_patterns
             iteration = iteration + 1
@@ -784,6 +804,7 @@ end type self_organized_map
   coordinates(current_index,1)=dble(ix);
   coordinates(current_index,2)=dble(iy);
   coordinates(current_index,3)=dble(iz);
+  !write(*,*) coordinates(current_index,1:3);
   if(trim(node_type) .eq. 'hexagonal') then
     coordinates(current_index,1)=coordinates(current_index,1)+&
                .5d0*(mod(coordinates(current_index,2),2.0d0));
@@ -863,8 +884,7 @@ end type self_organized_map
   real(kind=8),dimension(size(current_values,1),size(current_values,2)) :: winner_values,term1,term2
   integer :: nx,ny,nz,debug_option,ic,current_pos,ineigh,jneigh,kneigh,idbg
   real(kind=8) :: time_factor,current_radius,alpha,sigma2,h_neighborhood,real_distance,term3
-  real(kind=8) :: distance_ratio,geometric_distance2,eps,current_distance,lambda
-  type(influence_function) :: influence_func
+  real(kind=8) :: distance_ratio,geometric_distance2,eps,current_distance,lambda,sigma
   real(kind=8),dimension(size(current_values,1),size(current_values,2)) :: v_vector
   real(kind=8) :: v_vector_norm,r,Psi
   character(len=40) :: m_estimator
@@ -883,7 +903,9 @@ end type self_organized_map
   alpha = max(kohonen_map%parameters%learning_rate*time_factor,0.01d0);
   sigma2=current_radius**2
 !
-  m_estimator=trim(kohonen_map%parameters%m_estimator);  
+  m_estimator=trim(kohonen_map%parameters%m_estimator);
+  m_estimator='Huber';
+!  write(*,*) 'M estimator= ',m_estimator;  
 !
   do ic=1,size(kohonen_map%coordinates,1)
      current_pos=position2index(ihit,jhit,khit,nx,ny);
@@ -932,11 +954,13 @@ end type self_organized_map
             case('robust_som')
               call kohonen_map%grid(ineigh,jneigh,kneigh)%get_prototype(prototype_values);
               prototype_values=prototype_values+h_neighborhood*(current_values-prototype_values);
-              ! v_vector=(current_values-prototype_values);
-              ! v_vector_norm=dsqrt(sum(v_vector**2));
-              ! r=v_vector_norm/sigma;
-              ! Psi=influence_func%calculate(m_estimator,r);
-              ! prototype_values=prototype_values+sigma*h_neighborhood*Psi*v_vector/v_vector_norm;
+              v_vector=(current_values-prototype_values);
+              v_vector_norm=dsqrt(sum(v_vector**2));
+              sigma=kohonen_map%sigma_influence;
+              !write(*,*) 'sigma= ',sigma;
+              r=v_vector_norm/sigma;
+              Psi=kohonen_map%influence_func%calculate(m_estimator,r);
+              prototype_values=prototype_values+sigma*h_neighborhood*Psi*v_vector/v_vector_norm;
               call kohonen_map%grid(ineigh,jneigh,kneigh)%set_prototype(prototype_values);
            end select
      endif
@@ -1469,8 +1493,15 @@ end type self_organized_map
 ! Get the results in the arrays
 !
  distortion=my_som%distortion
- u_matrix(1:2*nx-1,1:2*ny-1)=my_som%u_matrix(:,:,1)
+ u_matrix(1:2*nx-1,1:2*ny-1)=my_som%u_matrix(:,:,1);
+ !do i=1,size(my_som%coordinates,1);
+    !write(*,*) my_som%coordinates(i,1:3);
+ !   coords(i,1:3)=my_som%coordinates(i,1:3);
+ !enddo
  coords=my_som%coordinates;
+ !coords(1:nx*nx,1)=my_som%coordinates(:,1);
+ !coords(1:nx*nx,2)=my_som%coordinates(:,2);
+ !coords(1:nx*nx,3)=my_som%coordinates(:,3);
  number_patterns=my_som%number_patterns(:,:,1);
  node_index=my_som%cells_index
  prot=prototypes;
